@@ -10,11 +10,94 @@
 
 </head>
 <body>
+<!--the beginning of top nav 已登陆状态 -->
+<!-- 左侧广告  start -->
+<div class="ad_left" style="display:none">
+	<span>关闭</span>
+	<img src="demo/1.gif"/>
+	<img src="demo/2.gif"/>
+	<img src="demo/3.gif"/>
+</div>
+<!-- 左侧广告  end -->
+
+<!-- 右侧广告  start -->
+<div class="ad_right" style="display:none">
+	<span>关闭</span>
+	<img src="demo/4.gif"/>
+	<img src="demo/5.gif"/>
+	<img src="demo/6.gif"/>
+</div>
+<div class="site_login">
+<div class="shell976">
+
+<span class="right_nav_bar" ><span class="green_rectangle">admin 您好</span>中国竹木工艺网，欢迎您！<span class="learn_center">我的会员中心>></span>  [退出] 
+ <ul class="learn_center_popup">
+	<li><a href="#">进入中心</a></li>
+	<li><a href="#">个人信息</a></li>
+	<li><a href="#">修改密码</a></li>
+</ul>
+</span>
+
+设为首页 | 加入收藏 
+</div>
+</div>
+<!--
+<div class="site_login">
+<div class="shell976">
+<span class="right_nav_bar" >  中国竹木工艺网，欢迎您！请 <a href="#"><span class="red_rectangle">[登录]</span></a> | <a href="#"><span class="green_rectangle">[注册]</span></a></span>  
+设为首页 | 加入收藏 
+</div>
+</div>-->
+<!--the end of top nav-->
 <div id="wrapper">
 	<div id="header">
 		<div class="top_head">
 			<img src="image/top.jpg" alt="" width="960" height="150"/>
 		</div>
+		<div class="menu">
+			<ul>
+			<li class="fff">
+			<a href="index_1.html">供应</a>
+			</li>
+			<li class="fff">
+			<a href="index_8.html">求购</a>
+			</li>
+			<li class="fff">
+			<a href="index_7.html">资讯</a>
+			</li>
+			<li class="fff">
+			<a href="index_10.html">行情</a>
+			</li>
+			<li class="fff">
+			<a href="index_4.html">品牌</a>
+			</li>
+			</ul>
+			<div class="bottom_nav style_bottom_nav">
+		<!--the beginning of menu 下面的 搜索 box -->
+			<form id="basicHeaderSearchForm" method="post" action="http://gwy.js-study.cn/course/course.action">
+				<input type="hidden" value="true" name="courseIndexQueryVO.flag" id="search_header_flag">
+				<input type="hidden" value="" id="search_header_id">          
+				<div class="menu_right_searchbox">
+					<div class="menu_right_search_select ">
+						<select class="menu_right_search_select" id="headerIndexSelect" name="type">
+							<option value="1">供应</option>
+							<option value="2">求购</option>
+							<option value="3">资讯</option>
+							<option value="4">行情</option>
+							<option value="5">品牌</option>
+						</select>
+					</div> 
+					<div class="menu_right_search_btn">
+						<input type="text" onkeypress="if(event.keyCode==13) {onFindByKey('basicHeaderSearchForm','headerIndexSelect','name_header','search_header_id','search_header_flag');}" style="border: 0px;border-color: transparent;" value="" id="name_header" name="name">
+						<a onclick="onFindByKey('basicHeaderSearchForm','headerIndexSelect','name_header','search_header_id','search_header_flag');" class="menu_right_search_an" href="javascript:void(0);">&nbsp;</a>
+					</div>
+				</div> 
+			</form>
+		<!--the end of menu 下面的 搜索 box -->	
+		</div>
+		</div>
+		
+		
 	</div>
 	<div id="content">
 		<center>
