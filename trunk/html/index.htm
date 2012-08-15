@@ -6,7 +6,25 @@
 	<meta http-equiv="Pragma" content="no-cache"/>
 	<meta http-equiv="Expires" content="0"/>
 	<link href="css/reset.css" rel="stylesheet" type="text/css" /> 
+	<link href="css/cycle.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery.cycle.js" type="text/javascript"></script>
 	<title>中国竹木工艺网</title>
+	<script>
+function skip(obj){
+var keyword = jQuery("#ProductName").val();
+if( keyword == document.getElementById("ProductName").defaultValue) keyword = "";
+window.location.href="/goods_list/?keyword="+encodeURI(keyword);
+}
+function keySet(obj,param){
+if(param == 'focus'){obj.value ='';}
+else if (param == 'blur'){
+if(obj.value == ''){
+obj.value = obj.defaultValue;
+}
+}
+}
+</script> 
 
 </head>
 <body>
@@ -63,10 +81,13 @@
 			<a href="index_8.html">求购</a>
 			</li>
 			<li class="fff">
+			<a href="index_4.html">招商</a>
+			</li>
+			<li class="fff">
 			<a href="index_7.html">资讯</a>
 			</li>
 			<li class="fff">
-			<a href="index_10.html">行情</a>
+				<a href="index_10.html">行情</a>
 			</li>
 			<li class="fff">
 			<a href="index_4.html">品牌</a>
@@ -85,10 +106,11 @@
 							<option value="3">资讯</option>
 							<option value="4">行情</option>
 							<option value="5">品牌</option>
+							<option value="6">品牌</option>
 						</select>
 					</div> 
 					<div class="menu_right_search_btn">
-						<input type="text" onkeypress="if(event.keyCode==13) {onFindByKey('basicHeaderSearchForm','headerIndexSelect','name_header','search_header_id','search_header_flag');}" style="border: 0px;border-color: transparent;" value="" id="name_header" name="name">
+						<input type="text" onblur="keySet(this,'blur');" ;="" onfocus="keySet(this,'focus');" value="输入关键字" style="border: 0px;border-color: transparent;" value="" id="name_header" name="name">
 						<a onclick="onFindByKey('basicHeaderSearchForm','headerIndexSelect','name_header','search_header_id','search_header_flag');" class="menu_right_search_an" href="javascript:void(0);">&nbsp;</a>
 					</div>
 				</div> 
@@ -100,61 +122,195 @@
 		
 	</div>
 	<div id="content">
-		<center>
-	    <div class="friendlink" > 
-		    
-			    
-			    
-			    	<a href="http://www.zhongsou.com" target="_blank" title="中搜">
-			    		<img alt="中搜" style="cursor: pointer;" border="0" src="/yz-webapp//upload/image/201208/im1343831875596963.png" width="152" height="43"/>
-			    	</a>
-			    
-		    
-			    
-			    
-			    	<a href="http://www.yznews.com.cn/" target="_blank" title="扬州网">
-			    		<img alt="扬州网" style="cursor: pointer;" border="0" src="/yz-webapp//upload/image/201208/im134383195870597.png" width="152" height="43"/>
-			    	</a>
-			    
-		    
-			    
-			    
-			    	<a href="http://bbs.huamanlou.com/" target="_blank" title="花满楼">
-			    		<img alt="花满楼" style="cursor: pointer;" border="0" src="/yz-webapp//upload/image/201208/im1343832132042593.png" width="152" height="43"/>
-			    	</a>
-			    
-		    
-			    
-			    
-			    	<a href="http://www.0514.com/" target="_blank" title="扬州生活网">
-			    		<img alt="扬州生活网" style="cursor: pointer;" border="0" src="/yz-webapp//upload/image/201208/im1343832180116710.png" width="152" height="43"/>
-			    	</a>
-			    
-		    
-			    
-			    
-			    	<a href="http://www.yangzhou.gov.cn" target="_blank" title="中国扬州">
-			    		<img alt="中国扬州" style="cursor: pointer;" border="0" src="/yz-webapp//upload/image/201208/im1343832296258230.png" width="152" height="43"/>
-			    	</a>
-			    
-		    
-			    
-			    	<a style="margin-right:0;" title="博客扬州" href="http://www.blogyz.net" target="_blank">
-			    		<img alt="博客扬州" style="cursor: pointer;" border="0" src="/yz-webapp//upload/image/201208/im1343832407341146.png" width="152" height="43"/>
-			    	</a>
-			    
-			    
-		     
-	    </div> 
-    </center>
+		<div class="shell01">
+			<!-- 产品分类  start -->
+			<div class="index_category">
+				<p><img src="image/category_head.png"></p>
+				<div class="category_bk">
+					<p class="category_title"><a class="rr mt5" href="#"><img src="image/more.png"></a> 竹家具 </p>
+					<ul>
+						<li><a href="#">原竹家具</a></li>
+						<li><a href="#">板式家具</a></li>
+						<li><a href="#">竹藤家具</a></li>
+						<li><a href="#">餐厅家具</a></li>
+						<li><a href="#">客厅家具</a></li>
+						<li><a href="#">书房家具</a></li>
+						<li><a href="#">更多</a></li>
+					</ul>
+					<p class="clearb"></p>
+					<p class="category_title">
+					<a class="rr mt5" href="#"><img src="image/more.png"></a> 竹地板</p>
+					<ul>
+						<li><a href="#">本色地板</a></li>
+						<li><a href="#">碳化地板</a></li>
+						<li><a href="#">竹丝板</a></li>
+						<li><a href="#">拼化地板</a></li>
+						<li><a href="#">贴面地板</a></li>
+						<li><a href="#">更多</a></li>
+					</ul>
+					<p class="clearb"></p>
+					<p class="category_title">
+					<a class="rr mt5" href="#"><img src="image/more.png"></a>竹纤维</p>
+					<ul>
+						<li><a href="#">卫浴系列</a></li>
+						<li><a href="#">服饰系列</a></li>
+						<li><a href="#">日用品</a></li>
+						<li><a href="#">婴童系列</a></li>
+						<li><a href="#">家纺系列</a></li>
+						<li><a href="#">竹纤维礼品</a></li>
+						<li><a href="#">更多</a></li>
+					</ul>
+					<p class="clearb"></p>  
+					<p class="category_title"><a class="rr mt5" href="#">
+					<img src="image/more.png"></a> 竹工艺品 </p>
+					<ul>
+						<li><a href="#">编织工艺</a></li>
+						<li><a href="#">雕刻工艺</a></li>
+						<li><a href="#">竹根工艺</a></li>
+						<li><a href="#">其他竹工艺</a></li>
+						<li><a href="#">竹筒日品类</a></li>
+						<li><a href="#">根雕</a></li>
+						<li><a href="#">更多</a></li>
+					</ul>
+					<p class="clearb"></p>  
+					<p class="category_title"><a class="rr mt5" href="#">
+					<img src="image/more.png"></a>竹窗帘</p>
+					<ul>
+						<li><a href="#">竹编织窗帘</a></li>
+						<li><a href="#">百叶窗</a></li>
+						<li><a href="#">门帘</a></li>
+						<li><a href="#">落地帘</a></li>
+						<li><a href="#">彩色窗帘</a></li>
+						<li><a href="#">印花窗帘</a></li>
+						<li><a href="#">更多</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 产品分类  end -->
+			<!-- focus  start -->
+			<div class="index_focus_box">
+				<div class="index_focus">
+					<div class=js_imgs_block>
+						<div id="slideshow_wrapper">
+							<div id="slideshow_photo">
+								<a style="z-index: 1" href="#" target="_blank" index="1">
+									<img src="demo/index_focus.png" width="515" height="300"/>
+								</a> 
+								<a style="z-index: 1" href="#" alt="12211221122" target="_blank" index="2">
+									<img src="demo/f1.jpg" width="480" height="300"/>
+								</a> 
+								<a style="z-index: 1" href="#" target="_blank" index="3">
+									<img src="demo/f2.jpg" width="480" height="300"/>
+								</a> 
+								<a style="z-index: 1" href="#" target="_blank" index="4">
+									<img src="demo/f3.jpg" width="480" height="300"/>
+								</a> 
+								<a style="z-index: 1" href="#" target="_blank" index="5">
+									<img src="demo/f4.jpg" width="480" height="300"/>
+								</a> 
+								<a style="z-index: 1" href="#" target="_blank" index="6">
+									<img src="demo/f5.jpg" width="480" height="300"/>
+								</a> 
+							</div>
+							<div id=slideshow_footbar></div>
+					   </div>
+					</div>
+				</div>
+				
+				<div class="index_news">
+					
+					<p class="category_title">
+						<a class="rr mt5" href="#"><img src="image/more.png" ></a> 热门新闻  热门新闻</p>
+					<ul>
+						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
+					</ul> 
+				</div>
+			</div>
+			<!-- focus  end -->
+			<!-- 公告新闻  start -->
+			<div class="index_announce rr">
+				<div class="zc rr">
+					<div class="zc_btn">
+							<a class="btn1" target="_blank" href="member/offer.jsp">发布招商信息</a>
+						<a class="btn1" target="_blank" href="member/offer.jsp">发布代理信息</a>
+						<a class="btn1" target="_blank" href="member/offer.jsp">发布供应信息</a>
+						<a class="btn1" target="_blank" href="member/offer.jsp">发布求购信息</a>
+						<div class="clear"></div>
+						<a class="btn2" rel="nofollow" target="_blank" href="register.jsp">马上免费注册会员</a>
+					
+					</div>
+				</div>
+				<p class="clearb"><br></p>
+				<a class="index_left_btns ico02" href="#">江苏电大在线</a>
+				
+			</div>
+			<!-- 公告新闻  end -->
+		</div>
+		<p class="clearb"></p>
+	
+			<div style="margin-right:9px;" class="index_news_2box ll">
+				<div style="padding:8px;" class="rightmenu">
+					<p class="category_title mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a> 政策法规</p>
+					<ul>
+						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
+						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
+						<li><a href="#">赤水市大兴竹文化旅游</a></li>
+						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
+						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
+						<li><a href="#">赤水市大兴竹文化旅游</a></li>
+					</ul> 
+				</div>
+			</div>
+			<div style="margin-right:9px;" class="index_news_2box">
+				<div style="padding:8px;" class="rightmenu">
+					<p class="category_title mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>热点行情</p>
+					<ul>
+						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
+						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
+						<li><a href="#">赤水市大兴竹文化旅游</a></li>
+						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
+						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
+						<li><a href="#">赤水市大兴竹文化旅游</a></li>
+					</ul> 
+				</div>
+			</div>
+			<div  class="index_news_2box">
+				<div style="padding:8px;" class="rightmenu">
+					<p class="category_title mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>行业资讯</p>
+					<ul>
+						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
+						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
+						<li><a href="#">赤水市大兴竹文化旅游</a></li>
+						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
+						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
+						<li><a href="#">赤水市大兴竹文化旅游</a></li>
+					</ul> 
+				</div>
+			</div>
+			<p class="clearb">
+				<img src="demo/vip.gif"/ width="960">
+			</p>
 	</div>
 	<div id="footer">
 		<ul class="footerline">
 		<li>
-			<span class="rr"><a href="javascript:void(0);" onclick="javascript:setHomepage('http://www.sgp-yzip.cn');" style="outline:none;blr:expression(this.onFocus=this.blur())">设为首页</a> | <a href="javascript:void(0);" onclick="addFavor('http://www.sgp-yzip.cn', '掌上扬州信息平台')" style="outline:none;blr:expression(this.onFocus=this.blur())">加入收藏夹</a></span> 
-			主办人：孙国平  所在单位 ：江苏省工程勘测研究院有限责任公司 江苏弘盛建设工程集团有限公司 
-			</li>
-		<li>地址：扬州市盐阜东路工人二村150号 |   电话：13905277611  15905273733   电邮：<a href="mailto:13905277611@163.com" style="outline:none;blr:expression(this.onFocus=this.blur())">13905277611@163.com</a>&nbsp;&nbsp;<a href="mailto:2290123231@qq.com" style="outline:none;blr:expression(this.onFocus=this.blur())">2290123231@qq.com</a></li>
+			<span class="rr">
+				<a target="_blank" href="http://www.huzhou.cyberpolice.cn">
+					<img border="0" align="absmiddle" src="http://www.hzjxj.com/images/gt.gif">
+				</a>
+				<a href="http://idinfo.zjaic.gov.cn/bscx.do?method=hddoc&id=330523000001781" target="_blank">
+					<img border="0" src="http://idinfo.zjaic.gov.cn/images/i_lo2.gif">
+				</a>
+			</span> 
+		</li>
+		<li>地址：扬州市盐阜东路工人二村150号</li>
+		<li>电话：13905277611  15905273733 </li>
+		<li>电邮：<a href="mailto:13905277611@163.com" style="outline:none;blr:expression(this.onFocus=this.blur())">13905277611@163.com</a>&nbsp;&nbsp;<a href="mailto:2290123231@qq.com" style="outline:none;blr:expression(this.onFocus=this.blur())">2290123231@qq.com</a></li>
 	</ul>
 	</div>
 </div>
