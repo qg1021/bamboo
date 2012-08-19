@@ -7,8 +7,10 @@
 	<meta http-equiv="Expires" content="0"/>
 	<link href="css/reset.css" rel="stylesheet" type="text/css" /> 
 	<link href="css/cycle.css" rel="stylesheet" type="text/css" />
+	<link href="css/easyui.css" rel="stylesheet" type="text/css" />
 	<script src="js/jquery.js" type="text/javascript"></script>
 	<script src="js/jquery.cycle.js" type="text/javascript"></script>
+	<script src="js/jquery.easyui.min.js" type="text/javascript"></script>
 	<title>中国竹木工艺网</title>
 	<script>
 function skip(obj){
@@ -24,26 +26,45 @@ obj.value = obj.defaultValue;
 }
 }
 }
+$(function(){
+	var index = 0;
+	var t = $('#tt');
+	var tabs = t.tabs('tabs');
+	setInterval(function(){
+		t.tabs('select', tabs[index].panel('options').title);
+		index++;
+		if (index >= tabs.length){
+			index = 0;
+		}
+	}, 3000);
+}); 
 </script> 
 
 </head>
 <body>
 <!--the beginning of top nav 已登陆状态 -->
 <!-- 左侧广告  start -->
-<div class="ad_left" style="display:none">
+<div class="ad_left">
 	<span>关闭</span>
 	<img src="demo/1.gif"/>
 	<img src="demo/2.gif"/>
 	<img src="demo/3.gif"/>
+	<img src="demo/4.gif"/>
+	<img src="demo/5.gif"/>
+	<img src="demo/6.gif"/>
+	
 </div>
 <!-- 左侧广告  end -->
 
 <!-- 右侧广告  start -->
-<div class="ad_right" style="display:none">
+<div class="ad_right">
 	<span>关闭</span>
 	<img src="demo/4.gif"/>
 	<img src="demo/5.gif"/>
 	<img src="demo/6.gif"/>
+	<img src="demo/1.gif"/>
+	<img src="demo/2.gif"/>
+	<img src="demo/3.gif"/>
 </div>
 <div class="site_login">
 <div class="shell976">
@@ -56,7 +77,7 @@ obj.value = obj.defaultValue;
 </ul>
 </span>
 
-设为首页 | 加入收藏 
+设为首页 | 加入收藏 | 广告推广
 </div>
 </div>
 <!--
@@ -72,8 +93,11 @@ obj.value = obj.defaultValue;
 		<div class="top_head">
 			<img src="image/top.jpg" alt="" width="960" height="150"/>
 		</div>
-		<div class="menu">
+		<div class="headermenu">
 			<ul>
+			<li class="fff">
+			<a href="index_1.html">首页</a>
+			</li>
 			<li class="fff">
 			<a href="index_1.html">供应</a>
 			</li>
@@ -94,28 +118,19 @@ obj.value = obj.defaultValue;
 			</li>
 			</ul>
 			<div class="bottom_nav style_bottom_nav">
-		<!--the beginning of menu 下面的 搜索 box -->
-			<form id="basicHeaderSearchForm" method="post" action="http://gwy.js-study.cn/course/course.action">
-				<input type="hidden" value="true" name="courseIndexQueryVO.flag" id="search_header_flag">
-				<input type="hidden" value="" id="search_header_id">          
-				<div class="menu_right_searchbox">
-					<div class="menu_right_search_select ">
-						<select class="menu_right_search_select" id="headerIndexSelect" name="type">
-							<option value="1">供应</option>
-							<option value="2">求购</option>
-							<option value="3">资讯</option>
-							<option value="4">行情</option>
-							<option value="5">品牌</option>
-							<option value="6">品牌</option>
-						</select>
-					</div> 
-					<div class="menu_right_search_btn">
-						<input type="text" onblur="keySet(this,'blur');" ;="" onfocus="keySet(this,'focus');" value="输入关键字" style="border: 0px;border-color: transparent;" value="" id="name_header" name="name">
-						<a onclick="onFindByKey('basicHeaderSearchForm','headerIndexSelect','name_header','search_header_id','search_header_flag');" class="menu_right_search_an" href="javascript:void(0);">&nbsp;</a>
-					</div>
-				</div> 
-			</form>
-		<!--the end of menu 下面的 搜索 box -->	
+		<!--the beginning of menu 下面的 搜索 box--> 
+
+		
+		<input class="easyui-searchbox" data-options="prompt:'输入关键字',menu:'#mm',searcher:function(value,name){alert(value+':'+name)}" style="width:350px"></input>
+			<div id="mm" style="width:43px">
+				<div data-options="name:'1'">供应</div>
+				<div data-options="name:'2'">求购</div>
+				<div data-options="name:'3'">资讯</div>
+				<div data-options="name:'4'">行情</div>
+				<div data-options="name:'5'">品牌</div>
+				<div data-options="name:'5'">招商</div>
+			</div>
+			<!--the end of menu 下面的 搜索 box -->	
 		</div>
 		</div>
 		
@@ -127,6 +142,17 @@ obj.value = obj.defaultValue;
 			<div class="index_category">
 				<p><img src="image/category_head.png"></p>
 				<div class="category_bk">
+					<p class="category_title"><a class="rr mt5" href="#">
+					<img src="image/more.png"></a> 竹工艺品 </p>
+					<ul>
+						<li><a href="#">编织工艺</a></li>
+						<li><a href="#">雕刻工艺</a></li>
+						<li><a href="#">竹根工艺</a></li>
+						<li><a href="#">其他竹工艺</a></li>
+						<li><a href="#">竹筒日品类</a></li>
+						<li><a href="#">根雕</a></li>
+					</ul>
+					<p class="clearb"></p>
 					<p class="category_title"><a class="rr mt5" href="#"><img src="image/more.png"></a> 竹家具 </p>
 					<ul>
 						<li><a href="#">原竹家具</a></li>
@@ -135,7 +161,6 @@ obj.value = obj.defaultValue;
 						<li><a href="#">餐厅家具</a></li>
 						<li><a href="#">客厅家具</a></li>
 						<li><a href="#">书房家具</a></li>
-						<li><a href="#">更多</a></li>
 					</ul>
 					<p class="clearb"></p>
 					<p class="category_title">
@@ -146,7 +171,6 @@ obj.value = obj.defaultValue;
 						<li><a href="#">竹丝板</a></li>
 						<li><a href="#">拼化地板</a></li>
 						<li><a href="#">贴面地板</a></li>
-						<li><a href="#">更多</a></li>
 					</ul>
 					<p class="clearb"></p>
 					<p class="category_title">
@@ -158,21 +182,9 @@ obj.value = obj.defaultValue;
 						<li><a href="#">婴童系列</a></li>
 						<li><a href="#">家纺系列</a></li>
 						<li><a href="#">竹纤维礼品</a></li>
-						<li><a href="#">更多</a></li>
 					</ul>
 					<p class="clearb"></p>  
-					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="image/more.png"></a> 竹工艺品 </p>
-					<ul>
-						<li><a href="#">编织工艺</a></li>
-						<li><a href="#">雕刻工艺</a></li>
-						<li><a href="#">竹根工艺</a></li>
-						<li><a href="#">其他竹工艺</a></li>
-						<li><a href="#">竹筒日品类</a></li>
-						<li><a href="#">根雕</a></li>
-						<li><a href="#">更多</a></li>
-					</ul>
-					<p class="clearb"></p>  
+					  
 					<p class="category_title"><a class="rr mt5" href="#">
 					<img src="image/more.png"></a>竹窗帘</p>
 					<ul>
@@ -182,7 +194,39 @@ obj.value = obj.defaultValue;
 						<li><a href="#">落地帘</a></li>
 						<li><a href="#">彩色窗帘</a></li>
 						<li><a href="#">印花窗帘</a></li>
-						<li><a href="#">更多</a></li>
+					</ul>
+					<p class="clearb"></p>  
+					<p class="category_title"><a class="rr mt5" href="#">
+					<img src="image/more.png"></a>竹板材</p>
+					<ul>
+						<li><a href="#">家具板</a></li>
+						<li><a href="#">楼梯板</a></li>
+						<li><a href="#">门面板</a></li>
+						<li><a href="#">包装板</a></li>
+						<li><a href="#">贴面板</a></li>
+						<li><a href="#">竹刨切板</a></li>
+					</ul>
+					<p class="clearb"></p>  
+					<p class="category_title"><a class="rr mt5" href="#">
+					<img src="image/more.png"></a>竹垫</p>
+					<ul>
+						<li><a href="#">沙发坐垫</a></li>
+						<li><a href="#">汽车坐垫</a></li>
+						<li><a href="#">竹地毯</a></li>
+						<li><a href="#">门垫</a></li>
+						<li><a href="#">保健枕</a></li>
+						<li><a href="#">麻将坐垫</a></li>
+					</ul>
+					<p class="clearb"></p>  
+					<p class="category_title"><a class="rr mt5" href="#">
+					<img src="image/more.png"></a>竹炭</p>
+					<ul>
+						<li><a href="#">原炭</a></li>
+						<li><a href="#">竹炭包</a></li>
+						<li><a href="#">空气净化炭</a></li>
+						<li><a href="#">竹醋液</a></li>
+						<li><a href="#">床上用品</a></li>
+						<li><a href="#">保健用品</a></li>
 					</ul>
 				</div>
 			</div>
@@ -194,68 +238,160 @@ obj.value = obj.defaultValue;
 						<div id="slideshow_wrapper">
 							<div id="slideshow_photo">
 								<a style="z-index: 1" href="#" target="_blank" index="1">
-									<img src="demo/index_focus.png" width="515" height="300"/>
+									<img src="demo/index_focus.png" width="465" height="300"/>
 								</a> 
 								<a style="z-index: 1" href="#" alt="12211221122" target="_blank" index="2">
-									<img src="demo/f1.jpg" width="480" height="300"/>
+									<img src="demo/f1.jpg" width="465" height="300"/>
 								</a> 
 								<a style="z-index: 1" href="#" target="_blank" index="3">
-									<img src="demo/f2.jpg" width="480" height="300"/>
+									<img src="demo/f2.jpg" width="465" height="300"/>
 								</a> 
 								<a style="z-index: 1" href="#" target="_blank" index="4">
-									<img src="demo/f3.jpg" width="480" height="300"/>
+									<img src="demo/f3.jpg" width="456" height="300"/>
 								</a> 
 								<a style="z-index: 1" href="#" target="_blank" index="5">
-									<img src="demo/f4.jpg" width="480" height="300"/>
+									<img src="demo/f4.jpg" width="465" height="300"/>
 								</a> 
 								<a style="z-index: 1" href="#" target="_blank" index="6">
-									<img src="demo/f5.jpg" width="480" height="300"/>
+									<img src="demo/f5.jpg" width="465" height="300"/>
 								</a> 
 							</div>
 							<div id=slideshow_footbar></div>
 					   </div>
 					</div>
 				</div>
-				
-				<div class="index_news">
-					
-					<p class="category_title">
-						<a class="rr mt5" href="#"><img src="image/more.png" ></a> 热门新闻  热门新闻</p>
-					<ul>
-						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
-						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
-						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
-						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡</a></li>
-						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
-						<li><span class="rr">2012.06.30</span><a href="#">无锡市社会教育机构“优师工程”正式启动无锡”</a></li>
+
+				<div id="tt" class="easyui-tabs" style="width:465px;margin-top:5px;">  
+					<div title="供应" class="index_news">  
+						<ul>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
 					</ul> 
+					</div>  
+					<div title="求购" class="index_news ">  
+						<ul>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游2”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游2”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游2”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游2</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游2”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游2”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游2</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游2”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+					</ul> 
+					</div>  
+					<div title="招商" class="index_news ">  
+						<ul>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游3”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游3”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游3”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游3</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游3”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游3”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游3</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游3”</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+						<li><span class="rr">2012.06.30</span><a href="#">大做竹文化文章 开展竹文化旅游1</a></li>
+					</ul> 
+					</div>					
 				</div>
 			</div>
 			<!-- focus  end -->
 			<!-- 公告新闻  start -->
 			<div class="index_announce rr">
-				<div class="zc rr">
-					<div class="zc_btn">
-							<a class="btn1" target="_blank" href="member/offer.jsp">发布招商信息</a>
+				<div class="indexlogin rr">
+					<div class="indexlogin_btn">
+						<a class="btn1" target="_blank" href="member/offer.jsp">发布招商信息</a>
 						<a class="btn1" target="_blank" href="member/offer.jsp">发布代理信息</a>
 						<a class="btn1" target="_blank" href="member/offer.jsp">发布供应信息</a>
-						<a class="btn1" target="_blank" href="member/offer.jsp">发布求购信息</a>
-						<div class="clear"></div>
-						<a class="btn2" rel="nofollow" target="_blank" href="register.jsp">马上免费注册会员</a>
-					
+						<a class="btn1" target="_blank" href="member/offer.jsp">发布求购信息</a>	
+						<a class="btn2" target="_blank" href="register.jsp">马上免费注册会员</a>
 					</div>
+					<p class="clearb"></p>
+					<span class="indexlogin_mess">如果您已是会员,请 <a href="#"><span class="red_rectangle">[登录]</span></a>!</span>
 				</div>
-				<p class="clearb"><br></p>
-				<a class="index_left_btns ico02" href="#">江苏电大在线</a>
-				
+				<p class="clearb"></p>
+				<div  class="easyui-tabs rr" style="width:242px;margin-top:5px;">  
+					<div title="产品展示" class="index_left">  
+                        	<p><a target="_blank" href="http://product.bamboo.cn/pro_795.html"><img src="demo/201045204048608.jpg"><br>桂竹刚竹淡竹红竹</a></p>
+							<p><a target="_blank" href="http://product.bamboo.cn/pro_796.html"><img src="demo/201045203955638.jpg"><br>淡竹雷竹红竹斑竹</a></p>
+							<p><a target="_blank" href="http://product.bamboo.cn/pro_133.html"><img src="demo/2007103022569458.jpg"><br>竹家具</a></p>
+							<p><a target="_blank" href="http://product.bamboo.cn/pro_841.html"><img src="demo/2010223195643147.jpg"><br>出口木蒸笼20.3cm</a></p>
+							<p><a target="_blank" href="http://product.bamboo.cn/pro_133.html"><img src="demo/2007103022569458.jpg"><br>竹家具</a></p>
+							<p><a target="_blank" href="http://product.bamboo.cn/pro_841.html"><img src="demo/2010223195643147.jpg"><br>出口木蒸笼20.3cm</a></p>
+							<p><a target="_blank" href="http://product.bamboo.cn/pro_133.html"><img src="demo/2007103022569458.jpg"><br>竹家具</a></p>
+							<p><a target="_blank" href="http://product.bamboo.cn/pro_841.html"><img src="demo/2010223195643147.jpg"><br>出口木蒸笼20.3cm</a></p>
+					</div>  
+					<div title="热门品牌" class="index_left">  
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_21144.html"><img src="demo/2011111165752597.jpg"><br>供应竹木餐具</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_21142.html"><img src="demo/20111031164617703.jpg"><br>供应竹帘1</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_21141.html"><img src="demo/20111031164548289.jpg"><br>供应竹帘2</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_21140.html"><img src="demo/20111031164510561.jpg"><br>供应竹帘3</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_133.html"><img src="demo/2007103022569458.jpg"><br>竹家具</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_841.html"><img src="demo/2010223195643147.jpg"><br>出口木蒸笼20.3cm</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_133.html"><img src="demo/2007103022569458.jpg"><br>竹家具</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_841.html"><img src="demo/2010223195643147.jpg"><br>出口木蒸笼20.3cm</a></p>
+					</div> 
+					<div title="广告位" class="index_left">  
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_21144.html"><img src="demo/2011111165752597.jpg"><br>供应竹木餐具</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_21142.html"><img src="demo/20111031164617703.jpg"><br>供应竹帘1</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_21141.html"><img src="demo/20111031164548289.jpg"><br>供应竹帘2</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_21140.html"><img src="demo/20111031164510561.jpg"><br>供应竹帘3</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_133.html"><img src="demo/2007103022569458.jpg"><br>竹家具</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_841.html"><img src="demo/2010223195643147.jpg"><br>出口木蒸笼20.3cm</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_133.html"><img src="demo/2007103022569458.jpg"><br>竹家具</a></p>
+						<p><a target="_blank" href="http://product.bamboo.cn/pro_841.html"><img src="demo/2010223195643147.jpg"><br>出口木蒸笼20.3cm</a></p>
+					</div> 
 			</div>
 			<!-- 公告新闻  end -->
 		</div>
 		<p class="clearb"></p>
+		<div title="广告位显示">
+			<div class="middle_ad ll" style="margin-right:2px;">
+				<a  target="_blank" href="member/offer.jsp">
+					<img src="image/a-3.gif" width="235px" height="84"/>
+				</a>
+			</div>
+			<div class="middle_ad ll" style="margin-right:2px;">
+				<a  target="_blank" href="member/offer.jsp">
+					<img src="image/a-3.gif" width="235px" height="84px"/>
+				</a>
+			</div>
+			<div class="middle_ad ll" style="margin-right:2px;">
+				<a  target="_blank" href="member/offer.jsp">
+					<img src="image/a-3.gif" width="235px" height="84px"/>
+				</a>
+			</div>
+			<div class="middle_ad ll">
+				<a  target="_blank" href="member/offer.jsp">
+					<img src="image/a-3.gif" width="235px" height="84px"/>
+				</a>
+			</div>
+		<div>
+		<p class="clearb"></p>
 	
 			<div style="margin-right:9px;" class="index_news_2box ll">
-				<div style="padding:8px;" class="rightmenu">
-					<p class="category_title mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a> 政策法规</p>
+				<div  class="rightmenu">
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a> 政策法规</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -267,8 +403,8 @@ obj.value = obj.defaultValue;
 				</div>
 			</div>
 			<div style="margin-right:9px;" class="index_news_2box">
-				<div style="padding:8px;" class="rightmenu">
-					<p class="category_title mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>热点行情</p>
+				<div  class="rightmenu">
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>热点行情</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -280,8 +416,8 @@ obj.value = obj.defaultValue;
 				</div>
 			</div>
 			<div  class="index_news_2box">
-				<div style="padding:8px;" class="rightmenu">
-					<p class="category_title mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>行业资讯</p>
+				<div  class="rightmenu">
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>行业资讯</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -296,22 +432,35 @@ obj.value = obj.defaultValue;
 				<img src="demo/vip.gif"/ width="960">
 			</p>
 	</div>
+	<div  class="easyui-tabs" style="width:960px;margin-top:5px;">  
+		<div title="友情链接" class="friendlink ">  
+			-<span><a target="_blank" href="http://www.bambooall.com">傲竹尚品</a></span>-<span><a target="_blank" href="http://www.icbr.ac.cn">国际竹藤网</a></span>-<span><a target="_blank" href="http://www.forestry.gov.cn">国家林业局政府网</a></span>-<span><a target="_blank" href="http://www.forestrysci.gov.cn">中国林业科技网</a></span>-<span><a target="_blank" href="http://www.lknet.ac.cn">中国林业信息网</a></span>-<span><a target="_blank" href="http://www.chinabamboonet.com">中国竹网</a></span>-<span><a target="_blank" href="http://www.chinagreen.net.cn">中国绿化网</a></span>-<span><a target="_blank" href="http://www.china-flower.com/">中国花卉网</a></span>-<span><a target="_blank" href="http://www.21food.cn/">中国食品商务网</a></span>-<span><a target="_blank" href="http://china.machine365.com/">中华机械网</a></span>-<span><a target="_blank" href="http://china.chemnet.com/">中国化工网</a></span>-<span><a target="_blank" href="http://www.charcoal.org.cn/">中国竹炭信息网</a></span>-<span><a target="_blank" href="http://www.cncraftinfo.com/">中国工艺品网</a></span>-<span><a target="_blank" href="http://www.ajol.cn">中国竹乡安吉在线</a></span>-<span><a target="_blank" href="http://www.fgr.cn/">中国森林植物种质资源</a></span>-<span><a target="_blank" href="http://sxzy.home.bj001.net/">沙县竹业网</a></span>-<span><a target="_blank" href="http://www.gnbamboo.com/qiye.htm">广宁竹子网</a></span>-<span><a target="_blank" href="http://www.chinesebamboo.net">中国竹子网</a></span>-<span><a target="_blank" href="http://www.gzbamboo.net">广东园林观赏竹子网</a></span>-<span><a target="_blank" href="http://www.wickerchina.cn/">中国编织工艺品门户</a></span>-<span><a target="_blank" href="http://www.dragon-guide.net">外贸网址之家</a></span>-<span><a target="_blank" href="http://www.bamboosea.net/">蜀南竹海</a></span>-<span><a target="_blank" href="http://www.ytjj360.com">亚太家具网</a></span>-<span><a target="_blank" href="http://www.cnbamboohome.com">竹家具</a></span>-<span><a target="_blank" href="http://www.shoppingju.com">装修材料</a></span>
+		</div> 
+	</div>
 	<div id="footer">
 		<ul class="footerline">
-		<li>
-			<span class="rr">
-				<a target="_blank" href="http://www.huzhou.cyberpolice.cn">
-					<img border="0" align="absmiddle" src="http://www.hzjxj.com/images/gt.gif">
-				</a>
-				<a href="http://idinfo.zjaic.gov.cn/bscx.do?method=hddoc&id=330523000001781" target="_blank">
-					<img border="0" src="http://idinfo.zjaic.gov.cn/images/i_lo2.gif">
-				</a>
-			</span> 
-		</li>
-		<li>地址：扬州市盐阜东路工人二村150号</li>
-		<li>电话：13905277611  15905273733 </li>
-		<li>电邮：<a href="mailto:13905277611@163.com" style="outline:none;blr:expression(this.onFocus=this.blur())">13905277611@163.com</a>&nbsp;&nbsp;<a href="mailto:2290123231@qq.com" style="outline:none;blr:expression(this.onFocus=this.blur())">2290123231@qq.com</a></li>
-	</ul>
+		</ul>
+		<div class="footer_menu mb5"
+			<span><a target="_blank" href="http://www.bamboo.cn/about/index_1.html">关于我们</a></span>
+			|
+			<span><a target="_blank" href="http://www.bamboo.cn/about/index_1.html">法律声明</a></span>
+			|
+			<span><a target="_blank" href="http://www.bamboo.cn/about/index_10.html">友情链接</a></span>
+			|
+			<span><a target="_blank" href="http://www.bamboo.cn/about/index_6.html">联系我们</a></span>
+			|<span><a target="_blank" href="/sitemap.html">广告服务</a></span>
+			|<span><a target="_blank" href="/sitemap.html">网站地图</a></span>
+		</div>
+		<div class="ta_c">
+			<p class="mb5">版权 © 2002-2012  中国竹木工艺网  （<a target="_blank" href="http://www.bamboo-crafts.cn"> bamboo-crafts.cn</a>）所有,  保留所有权利</p>
+			<p class="mb5">
+				<a target="_blank" href="http://net.china.com.cn/index.htm"><img src="image/report.gif"></a>&nbsp;&nbsp;
+				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="image/110.gif"></a>&nbsp;&nbsp;
+				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="image/ppaa.gif"></a>&nbsp;&nbsp;
+			</p>
+			<p class="icp mb5"><img src="image/icp.gif"><a target="_blank" href="http://www.miibeian.gov.cn/">浙ICP备09018754号</a></p>
+		</div>
+	</div>
 	</div>
 </div>
 </body>
