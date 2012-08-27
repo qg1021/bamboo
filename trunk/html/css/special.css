@@ -1,0 +1,96 @@
+/*------------------------------------------------------------------
+
+可替换颜色 专题学习  我的学习中心 独立页面头部和 内容 
+
+-------------------------------------------------------------------*/
+@import url("spiceal_green.css");
+@charset "utf-8";
+
+.headminibar { background-color:#2F5285; height:5px;}
+.top_box_blue {background-color: #efefef; height:170px; color:#fff; padding:16px; line-height:18px; margin-bottom:16px;}
+.top_box_blue H2 { font-family:微软雅黑; letter-spacing:2px;display:inline;}
+
+.topbk { height:152px; padding:8px;}
+
+.avatar_box {  text-align:center;background-color: #FFFFFF;border: 1px solid #E3E4DF;border-radius: 5px 5px 5px 5px;margin-bottom: 16px;width: 200px; padding:15px 0; }
+
+
+.topmenu { background:#0D9C04; width:100%;  margin-bottom:8px;padding:8px; overflow:hidden;}
+.topmenu li { float:left; }
+.topmenu a{ color:#fff; padding:12px 16px; text-decoration:none}
+.topmenu a:hover { background:#f26522; }
+
+
+
+.special_left_content_shell {
+	width:774px;
+	float:left;
+	}	
+
+.content_blcok { margin-bottom:32px;}
+
+.memberlist {  padding-top:16px; overflow:hidden }
+.memberlist li {  width:112px; border:1px solid #ccc; padding:8px;display:inline-block;overflow:hidden; float:left; margin-right:8px;margin-bottom:8px;}
+.memberlist li img { float:left; margin-right:8px;}
+.memberlist li p {line-height:18px;}
+
+
+/*单个课程列表*/
+.course_block{
+	background:#f0efef;
+	border:1px solid #e5e4e4;
+	padding:5px 10px;
+	overflow:hidden;
+	margin-bottom:10px;
+	}
+.course_block img{
+	float:left;
+	margin-right:10px;
+	}
+.courseinfo{
+	float:left;
+	width:340px;
+	}
+.courseinfo span { padding:0 10px; border-left:1px solid #ccc;}
+.courseinfo b {color:orange}
+.courseline{
+	height:20px;
+	line-height:20px;
+	padding-bottom: 5px;
+	}
+.courseline span a{
+	font-weight:bold;
+	}
+.caction{
+	float:right;
+	border:1px dotted #ccc;
+	background:#e4fadd;
+	width:110px;
+	padding:16px 8px  0px 8px;
+	min-height:50px;
+	_height:50px;
+	text-align:center;
+	line-height:20px;
+	}
+.caction b {color:orange}	
+.stars_bar{
+	background:url(./image/stars_bar.png) repeat-x scroll left bottom;
+	width:80px;
+	height:15px;
+	display:inline-block;
+	}
+.stars_bar div{
+	background:url(./image/stars_bar.png) repeat-x scroll left top;
+	height:15px;
+	}	
+
+.user_info_panel  { border:1px solid #ccc;}
+.user_info_panel table {width:100%;}
+.user_info_panel td {padding:8px;}
+.user_info_panel  b { font-size:18px; font-weight:bold; margin-right:20px;}
+.user_info_panel ul { margin-top:10px;}
+.user_info_panel li { width:250px; float:left; line-height:22px;}
+
+.user_info_panel_point {background-color:#F5F5F5;border: 1px solid #DDDDDD;padding:8px; margin-bottom:8px; }
+
+.special_topbox { margin-bottom:20px; float:left; width:50%; line-height:20px;}

@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+
+/***********************copy from login.css**************************/
+
+
+.login_box {
+    width: 68%;
+    float: left;
+    margin: 30px auto;
+    border-right: 1px solid #0D9C04;
+}
+
+.login_box ul {
+    float: left;
+    border: none;
+    padding-left: 20px;
+    font-size: 14px;
+	margin:0 auto;
+}
+
+.login_box li {
+    height: 40px;
+    line-height: 40px;
+
+}
+
+.toreg {
+	background: url("image/login_right.jpg") no-repeat scroll 0 0 transparent;
+    float: right;
+    width: 30%;
+    margin: 5px auto;
+	height: 355px;
+   
+}
+
+.rememberme {
+    padding-left: 60px;
+}
+
+.loign_f {
+    width: 95%;
+    border-top: dotted 1px #0D9C04;
+    margin: 20px auto 0;
+    line-height: 300%
+	}
+
+
+.getpw{
+	width:80%;
+	height:40%;
+	margin:70px auto;
+	}
+.button01 {
+    height: 35px;
+    margin: 15px auto;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+}
+.button01 input {
+    background: url("image/login.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    font-weight: bolder;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100px;
+}
+.font333 {
+	color: #0D9C04;
+}
+.font_s16 {
+	font-size: 16px;
+}
+.items {
+    height: 40px;
+    line-height: 40px;
+}
+.items span {
+    height: 30px;
+    line-height: 30px;
+}
+.items input {
+    float: left;
+    width: 235px;
+}
+.item label {
+    float: left;
+    width: 70px;
+}
+.item label input {
+    float: left;
+    margin: -20px;
+}
+.label {
+    display: block;
+    float: left;
+    width: 100px;
+}
+.input {
+    background: none repeat scroll 0 0 #E1FBE0;
+    border: 1px solid #0D9C04;
+    color: #0D9C04;
+}
+.input_w {
+    border: 1px solid #0D9C04;
+    color: #0D9C04;
+}
+input {
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+.label02 {
+    display: block;
+    float: left;
+    width: 60px;
+}
+
+
+
+
+
+
+
+
+
+

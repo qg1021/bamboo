@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无锡学习</title>
+<link href="css/master.css" rel="stylesheet" type="text/css" />
+<link href="css/special.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../JS/module_tab.js"></script>
+</head>
+
+<body>
+<div id="wrapper"> 
+  
+
+  
+  <!-- 正文内容 start -->
+  <div id="content">
+    <ul class="topmenu">
+      <li style="margin-right:60px;margin-left:20px; font-size:14px; font-weight:bold;color: #FFFFFF;">我的学习中心</li>
+      <li><a href="#">学习护照</a></li>
+      <li><a href="#">学习博客</a></li>
+      <li><a href="#">个人信息</a></li>
+      <li><a href="#">学习博客</a></li>
+      <li><a href="#">充值与支付</a></li>
+      <li><a href="#">学习卡绑定</a></li>
+      <li><a href="#">我的文具盒</a></li>
+      <li><a href="#">教师管理</a></li>
+    </ul>
+    
+    <!-- 左侧菜单 start -->
+    <div class="leftmenu_shell">
+      <ul class="lh180 mb10">
+        <li>注册时间：2011.02.01</li>
+        <li>登录次数：30</li>
+        <li>最后登录：2012.05.09</li>
+      </ul>
+      <ul class="leftmenu_tab">
+        <li id="a_1" onclick="setTab('a',1,4)" class="selected"><a href="#">修改个人信息</a></li>
+        <li id="a_3" onclick="setTab('a',3,4)"><a href="#">更改密码</a></li>
+		<li id="a_4" onclick="setTab('a',4,4)"><a href="userlist.htm">发布供应信息</a></li>
+		<li id="a_4" onclick="setTab('a',4,4)"><a href="#">发布求购信息</a></li>
+		<li id="a_4" onclick="setTab('a',4,4)"><a href="#">发布招商信息</a></li>
+      </ul>
+    </div>
+    <!-- 左侧菜单 end --> 
+    
+    <!-- 右侧内容 start -->
+    <div class="right_shell"> 
+<h2 class="mb10 box_solid_bottom">个人信息修改</h2>
+      <!--个人信息 start 01-->
+      <div id="a_1_box" style="display:block;">
+      <p class="success_box">用户信息修改成功！</p>
+        <ul class="form_list">
+          <li> <span class="icon_cross rr">用户已存在</span>
+            <label>用户名<b>*</b></label><input type="text" size="30"/>
+          </li>
+          <li> <span class="icon_cross rr">请填写昵称</span>
+            <label>昵称<b>*</b></label><input type="text" size="30"/>
+          </li>
+          <li>
+            <label>用户所在地<b>*</b></label><input type="radio"/>
+            无锡市
+            <select style="width:100px;">
+              <option>惠山区</option>
+            </select>
+            区/县
+            <select style="width:100px;">
+              <option>五里桥</option>
+            </select>
+            街/镇
+            <p class="ml_100"><input type="radio"/>
+              非无锡市</p>
+          </li>
+        </ul>
+        <p class="box_dotline_top mb10"><b>- 完成以下内容，有助于我们为您进行个性化推荐</b></p>
+        <ul class="form_list">
+          <li><span class="icon_cross rr">请选择教育经历</span>
+            <label>教育经历<b>*</b></label><select name="select" style="width:200px;">
+              <option value="请选择" selected="">请选择</option>
+              <option value="博士" selected="">博士</option>
+              <option value="硕士" selected="">硕士</option>
+              <option value="大学本科" selected="">大学本科</option>
+              <option value="专科/高职" selected="">专科/高职 </option>
+              <option value="高中/中职/中专/技校" selected="">高中/中职/中专/技校 </option>
+              <option value="初中" selected="">初中</option>
+              <option value="小学" selected="">小学</option>
+              <option value="其他" selected="">其他</option>
+            </select>
+          </li>
+          <li> <span class="icon_cross rr">电子邮箱格式不正确</span>
+            <label>电子邮箱<b>*</b></label><input type="text" size="30"/>
+          </li>
+          <li><span class="icon_cross rr">请输入通讯地址</span>
+            <label>通讯地址<b>*</b></label><select>
+              <option>选择市</option>
+            </select>
+            <select>
+              <option>选择区县</option>
+            </select>
+            <select>
+              <option>选择街镇</option>
+            </select>
+            <p class="ml_100 mt5">
+              <input type="text" size="30"/>
+            </p>
+          </li>
+          <li> <span class="icon_cross rr">请输入通讯邮编</span>
+            <label>通讯邮编<b>*</b></label><input type="text" size="30"/>
+          </li>
+         <li> 
+            <label>职业类型</label><select style="width:200px;"><option>其他</option></select>
+          </li>
+           <li> 
+            <label class="ll">阅读兴趣</label>
+            <ul class="checkbox_list_box">
+            <li> <span>
+                    <input type="checkbox" value="" name="input" />
+                    文学 </span> <span>
+                    <input type="checkbox" value="" name="input" />
+                    绘画 </span> <span>
+                    <input type="checkbox" value="" name="input" />
+                    体育运动 </span> <span>
+                    <input type="checkbox" value="" name="input" />
+                    摄影 </span> <span>
+                    <input type="checkbox" value="" name="input" />
+                    旅游 </span> <span>
+                    <input type="checkbox" value="" name="input" />
+                    电影</span>
+             </li>
+             <li>
+                     <span>
+                    <input type="checkbox" value="" name="input" />
+                    音乐 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    戏剧 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    生活保健 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    科学/科技 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    语言文字 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    经济/金融 </span> 
+               </li>
+              <li>
+                     <span>
+                    <input type="checkbox" value="" name="input" />
+                    家政/理财 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    休闲技艺 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    道德修养 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    教育 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    职业发展 </span> 
+                    <span>
+                    <input type="checkbox" value="" name="input" />
+                    就业指导 </span> 
+               </li>
+             </ul>
+          </li>
+        </ul>
+        <p class="button_box"><button class="course_btn_common">确定更改</button></p>
+      </div>
+      <!--个人信息 end 01--> 
+      
+     
+     
+     
+     <!--更改密码 start 03--> 
+     <div id="a_3_box">
+     <ul class="infopanel_box form_list">
+			<li><span class="fontbold">- 设置新密码</span></li>
+			<li><label>当前密码<b>*</b></label><input type="text" />
+			<!--  请输入当前新密码的错误提示  -->
+			<span class="icon_cross">请输入当前密码</span>
+			</li>		
+
+			<li><label>新密码<b>*</b></label><input type="text" />
+			<!--  两次输入的新密码不一样的错误提示  -->
+			<span class="icon_cross"> 两次输入的新密码不一样</span>
+			</li>
+
+			<li><label>重复新密码<b>*</b></label><input type="text" />
+			</li>
+            <p class="button_box"><button class="course_btn_common">设置新密码</button></p>
+		</ul>
+      <ul class="infopanel_box form_list">
+			<li><span class="fontbold">- 更改密码问题和答案</span>（密码问题和答案将被用于密码丢失后的取回）</li>
+			<li><label>密码问题<b>*</b></label><input type="text" />
+			<!--  请输入问题的错误提示  -->
+			<span class="icon_cross">请输入问题</span>
+			</li>		
+
+			<li><label>密码答案<b>*</b></label><input type="text" />
+			<!--  请输入答案的错误提示  -->
+			<span class="icon_cross"> 请输入答案</span>
+			</li>
+
+			<li><label>当前密码<b>*</b></label><input type="text" />
+            <!--  请输入当前密码的错误提示  -->
+			<span class="icon_cross"> 请输入当前密码</span>
+			</li>
+            <p class="button_box"><button class="course_btn_common">确定修改</button></p>
+		</ul>
+     </div>
+     <!--更改密码 end 03--> 
+     
+    
+      
+    </div>
+    <!-- 右侧内容 end --> 
+    
+  </div>
+  <!-- 正文内容 end --> 
+  <div id="footer">
+		<ul class="footerline">
+		</ul>
+		<div class="footer_menu mb5"
+			<span><a target="_blank" href="http://www.bamboo.cn/about/index_1.html">关于我们</a></span>
+			|
+			<span><a target="_blank" href="http://www.bamboo.cn/about/index_1.html">法律声明</a></span>
+			|
+			<span><a target="_blank" href="http://www.bamboo.cn/about/index_10.html">友情链接</a></span>
+			|
+			<span><a target="_blank" href="http://www.bamboo.cn/about/index_6.html">联系我们</a></span>
+			|<span><a target="_blank" href="/sitemap.html">广告服务</a></span>
+			|<span><a target="_blank" href="/sitemap.html">网站地图</a></span>
+		</div>
+		<div class="ta_c">
+			<p class="mb5">版权 © 2002-2012  中国竹木工艺网  （<a target="_blank" href="http://www.bamboo-crafts.cn"> bamboo-crafts.cn</a>）所有,  保留所有权利</p>
+			<p class="mb5">
+				<a target="_blank" href="http://net.china.com.cn/index.htm"><img src="image/report.gif"></a>&nbsp;&nbsp;
+				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="image/110.gif"></a>&nbsp;&nbsp;
+				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="image/ppaa.gif"></a>&nbsp;&nbsp;
+			</p>
+			<p class="icp mb5"><img src="image/icp.gif"><a target="_blank" href="http://www.miibeian.gov.cn/">浙ICP备09018754号</a></p>
+		</div>
+	</div>
+  
+</div>
+</body>
+</html>
