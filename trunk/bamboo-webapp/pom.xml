@@ -7,8 +7,8 @@
 		<artifactId>springside3-parent</artifactId>
 		<version>3.3.4</version>
 	</parent>
-	<groupId>com.drcl.yz</groupId>
-	<artifactId>yz-webapp</artifactId>
+	<groupId>com.gm.bamboo</groupId>
+	<artifactId>bamboo-webapp</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>gm :: bamboo :: webapp </name>

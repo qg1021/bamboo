@@ -9,7 +9,7 @@
 <head>
 <title>后台登录</title>
 <%@ include file="/common/meta.jsp" %>
-<link href="${ctx}/css/master.css" rel="stylesheet" type="text/css" /> 
+<link href="${ctx}/css/front.css" rel="stylesheet" type="text/css" /> 
 <link href="${ctx}/css/login.css" rel="stylesheet" type="text/css" /> 
 <link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet" />
 <script src="${ctx}/js/jquery.js" type="text/javascript"></script>
@@ -64,7 +64,7 @@ document.onkeydown = function(e){
 			<div class="supertitle">
       			<h2 class="stitle">登录中国竹木工艺网</h2>
     		</div>
-    		<div class="form">
+    		<div class="frontform">
       			<div class="errormsg">   
 					<%
 						if (session.getAttribute(AbstractAuthenticationProcessingFilter.SPRING_SECURITY_LAST_EXCEPTION_KEY) != null) {

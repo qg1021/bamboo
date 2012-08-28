@@ -1,58 +1,74 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@page import="com.gm.bamboo.util.CommonUtils"%>
 <%@ include file="/common/taglibs.jsp" %>
-<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<%@ include file="/common/meta.jsp" %>
-	<title>网站后台</title> 
-	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
-	<script src="${ctx}/js/jquery.js" type="text/javascript"></script>
-	<script src="${ctx}/js/table.js" type="text/javascript"></script>
+<meta content="coursestat" name="activemenu" />
+<title>后台管理（数字电大）</title>
+<link href="${ctx}/css/master.css" rel="stylesheet" type="text/css" />
+<script src="${ctx}/js/jquery.js" type="text/javascript"></script> 
+<script type="text/javascript" src="${ctx }/js/DatePicker/WdatePicker.js" ></script>
 </head>
 <body>
-<div id="wrapper">
-	<%@ include file="/common/top.jsp"%>
-	<div id="content"><!--左边tab--> 
-		<%@ include file="/common/menu.jsp"%>
-		<!--左边tab结束--> <!--右边-->
-	<div class="right_content">
-		<table cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
-			<tr height=28>
-				<td background="${ctx}/image/admin/title_bg1.jpg">当前位置:后台首页</td>
-			</tr>
-			<tr>
-				<td bgColor="#b1ceef" height="1"></td>
-			</tr>
-			<tr height="20">
-				<td background="${ctx}/image/admin/shadow_bg.jpg"></td>
-			</tr>
-		</table>
-		<table cellSpacing=0 cellPadding=0 width="90%" align=center border=0>
-			<tr height=100>
-				<td align="center" width=100>
-					<img height="100" src="${ctx}/image/admin/admin_p.gif" width="90"/></td>
-				<td width=60>&nbsp;</td>
-				<td>
-				<table height=100 cellSpacing=0 cellPadding=0 width="100%" border=0>
-		
-					<tr>
-						<td>当前时间：<%=CommonUtils.getCurrentDate("yyyy-MM-dd HH:mm")%></td>
-					</tr>
-					<tr>
-						<td>欢迎进入网站管理中心！</td>
-					</tr>
-				</table>
-				</td>
-			</tr>
-			<tr>
-				<td colSpan=3 height=10></td>
-			</tr>
-		</table>
+	<div id="wrapper"> 
+	<%@include file="/common/header.jsp" %>
+		<!-- 正文内容 start -->
+		<div id="content"> 
+		    <!-- 左侧菜单 总shell start -->
+		    <%@include file="/common/adminleft.jsp" %>
+		    <!-- 左侧菜单 总shell end --> 
+		    
+			<!-- 右侧内容 start -->
+    <div class="right_shell"> 
+	<h2 class="mb10 box_solid_bottom"> 课程学习统计</h2>
+<form name="form" action="${ctx}/admin/coursestat.action" method="post">
+<div class="box_search">
+<ul>
+<li>
+<input type="submit" value="查询" class="rr" />
+
+<span>时间周期 <input type="text" readonly="readonly" id="beginDate" value="${statVO.beginDate}" name="statVO.beginDate" onclick="WdatePicker();" size="10" /> 至
+<input type="text" readonly="readonly" id="endDate" value="${statVO.endDate}" name="statVO.endDate" onclick="WdatePicker();" size="10" /></span>
+<span>课程代码 <input type="text" size="20" value="${statVO.code}" name="statVO.code"/></span>
+<span>课程名称 <input type="text" size="20" value="${statVO.name}" name="statVO.name"/></span>
+</li>
+</ul>
+</div> 
+
+<table class="tablebox">
+   <tr>
+   <th>课程名称</th>
+   <th>课程代码</th>
+   <th>选课人数</th>
+   <th>学习时间（分钟）</th>
+   </tr>
+   <tr>
+   	<td colspan="2">汇总</td>
+   	<td>${count.num}</td>
+   	<td>${count.min}</td>
+   </tr>
+   <s:iterator value="page.result" status="st">
+   <tr>
+   <td><a href="coursestat!course.action?id=${id}">${name}</a></td>
+   <td>${code}</td>
+   <td>${num}</td>
+   <td>${min}</td>
+   </tr>
+   </s:iterator>
+   
+   </table>
+
+</form>   
+ 
+    
+    </div>
+    <!-- 右侧内容 end --> 
+			<p class=" del_float"></p>
+		</div>
+		<!-- 正文内容 end --> 
+	      <%@include file="/common/footer.jsp" %>
 	</div>
-<!--右边结束--></div>
-<!-- content  end--></div>
-<!-- wrapper  end-->
 </body>
 </html>
+

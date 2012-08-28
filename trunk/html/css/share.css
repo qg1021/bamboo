@@ -466,22 +466,58 @@ a.btn_white:active, input.btn_white:active, button.btn_white:active { top: 1px ;
 	}	
 	
 /* 树形结构  */
-.tree {padding: 10px;line-height:18px;}
-.tree ul{ padding-left:17px; line-height:180%;}
-.tree li{  line-height:190%;}
-.tree .folder{ background:url(./image/folder_open.png) no-repeat left center; padding-left:21px; cursor:pointer; }
-.tree .build{ background:url(./image/building_medium.png) no-repeat left center; padding-left:21px; cursor:pointer }
-.uncompleted{ background:url(./image/ico_uncompleted.png) no-repeat left top; padding: 2px 0 2px 20px;}
-.completed{ background:url(./image/ico_completed.png) no-repeat left top; padding: 2px 0 2px 20px;}
-.plus{ background:url(./image/contract.gif) no-repeat 0 2px; width:17px; height:13px;}
-.cut{ background:url(./image/expand.gif) no-repeat 0 2px;width:17px; height:13px; }
-.tree a{text-decoration:none;color:#333; height:14px;}
-.tree a:hover{text-decoration:underline; font-weight:bold;}
-.draw_btn{display:block; background: #5cb13d url(./image/draw.png) no-repeat 5px 5px; padding: 3px 5px 3px 25px; color: #fff; text-decoration: none;}
-.form {
-    border: 1px solid #0D9C04;
-    margin: 5px auto;
-    min-height: 400px;
-    padding: 10px 30px;
-	border-radius: 3px 3px 3px 3px;
+.tree {
+    padding: 10px;
+}
+.tree ul {
+    line-height: 180%;
+    padding-left: 30px;
+}
+.tree li {
+    line-height: 190%;
+}
+.tree .folder {
+    background: url("image/folder_open.png") no-repeat scroll left center transparent;
+    cursor: pointer;
+    padding-left: 21px;
+}
+.tree .build {
+    background-image: url("css/image/building_medium.gif");
+}
+.uncompleted {
+    background: url("image/ico_uncompleted.png") no-repeat scroll left top transparent;
+    padding: 2px 0 2px 20px;
+}
+.completed {
+    background: url("image/ico_completed.png") no-repeat scroll left top transparent;
+    padding: 2px 0 2px 20px;
+}
+.plus {
+    background: url("image/contract.gif") no-repeat scroll 0 2px transparent;
+    padding-left: 17px;
+}
+.cut {
+    background: url("image/expand.gif") no-repeat scroll 0 2px transparent;
+    padding-left: 17px;
+}
+.tree a {
+    color: #333333;
+    text-decoration: none;
+}
+.tree a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.draw_btn {
+    background: url("css/image/draw.png") no-repeat scroll 5px 5px #5CB13D;
+    color: #FFFFFF;
+    display: block;
+    padding: 3px 5px 3px 25px;
+    text-decoration: none;
 }	
+input[type="text"] {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+    vertical-align: middle;
+}

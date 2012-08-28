@@ -716,6 +716,19 @@ element.style {
 	border: 0 none;
 	vertical-align:middle;
 }
+/*×¢²á*/
+.supertitle { height: 40px;}
+.stitle { color: #0D9C04; font-family: 'Î¢ÈíÑÅºÚ',Tahoma,sans-serif;  font-size: 26px; font-weight: normal;}
+.tologin{ float:right; margin-top:8px;}
+.reg_box{ border:1px solid #0D9C04; padding:20px; margin:0 auto;}
+.regterm { clear:both; height: 30px; line-height: 30px; border-top:1px dotted #ccc;}
+.frontform {
+    border: 1px solid #0D9C04;
+    border-radius: 3px 3px 3px 3px;
+    margin: 5px auto;
+    min-height: 400px;
+    padding: 10px 30px;
+}
 
 
 

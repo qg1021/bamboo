@@ -169,7 +169,8 @@ select {
 .color666{color:#666;	} /*  中等深灰色  */
 .color999{color:#999;	} /*  50%灰色  */
 .colorccc{color:#ccc;	} /*  #ccc灰色  */
-.coloreee{color:#eee;	} /*  #eee灰色  */
+
+
 
 .fontbold{font-weight:bold;} /*  粗体  */
 
@@ -715,6 +716,19 @@ element.style {
 .icp img {
 	border: 0 none;
 	vertical-align:middle;
+}
+/*注册*/
+.supertitle { height: 40px;}
+.stitle { color: #0D9C04; font-family: '微软雅黑',Tahoma,sans-serif;  font-size: 26px; font-weight: normal;}
+.tologin{ float:right; margin-top:8px;}
+.reg_box{ border:1px solid #0D9C04; padding:20px; margin:0 auto;}
+.regterm { clear:both; height: 30px; line-height: 30px; border-top:1px dotted #ccc;}
+.frontform {
+    border: 1px solid #0D9C04;
+    border-radius: 3px 3px 3px 3px;
+    margin: 5px auto;
+    min-height: 400px;
+    padding: 10px 30px;
 }
 
 
