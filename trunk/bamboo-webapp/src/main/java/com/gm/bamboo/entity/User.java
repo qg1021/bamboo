@@ -29,29 +29,153 @@ public class User extends BaseEntity
     /**
      * serialVersionUID long
      */
-    private static final long  serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-    /**
-     * 用户名
-     */
+    private String            loginName;            // 用户名
 
-    private String             loginName;
+    private String            name;                 // 姓名
 
-    /**
-     * 姓名
-     */
+    private String            nick;                 // 昵称
 
-    private String             name;
+    private String            password;             // 密码
 
-    /**
-     * 密码
-     */
+    private String            edudegree;            // 教育经历
 
-    private String             password;
+    private String            email;                // 邮箱
 
-    private Date               createDate;                 // 创建时间
+    private String            province;             // 省
+
+    private String            city;                 // 市
+
+    private String            area;                 // 区
+
+    private String            address;              // 详细地址
+
+    private String            introduction;         // 简介
+
+    private String            sex;                  // 性别
+
+    private Date              createDate;           // 创建时间
+
+    private String            roleName;             // 角色名称
+
+    private String            linktel;              // 联系方式
+
+    private String            pwdquestion;          // 密码问题
+
+    private String            pwdanswer;            // 密码问题答案
+
+    public String getPwdquestion()
+    {
+        return pwdquestion;
+    }
+
+    public void setPwdquestion(String pwdquestion)
+    {
+        this.pwdquestion = pwdquestion;
+    }
+
+    public String getPwdanswer()
+    {
+        return pwdanswer;
+    }
+
+    public void setPwdanswer(String pwdanswer)
+    {
+        this.pwdanswer = pwdanswer;
+    }
+
+    public String getLinktel()
+    {
+        return linktel;
+    }
+
+    public void setLinktel(String linktel)
+    {
+        this.linktel = linktel;
+    }
 
     public static final String DEFAULT_PASSWORD = "123456"; // 用户默认密码
+
+    public String getEdudegree()
+    {
+        return edudegree;
+    }
+
+    public void setEdudegree(String edudegree)
+    {
+        this.edudegree = edudegree;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public String getProvince()
+    {
+        return province;
+    }
+
+    public void setProvince(String province)
+    {
+        this.province = province;
+    }
+
+    public String getCity()
+    {
+        return city;
+    }
+
+    public void setCity(String city)
+    {
+        this.city = city;
+    }
+
+    public String getArea()
+    {
+        return area;
+    }
+
+    public void setArea(String area)
+    {
+        this.area = area;
+    }
+
+    public String getAddress()
+    {
+        return address;
+    }
+
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+
+    public String getIntroduction()
+    {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction)
+    {
+        this.introduction = introduction;
+    }
+
+    public String getSex()
+    {
+        return sex;
+    }
+
+    public void setSex(String sex)
+    {
+        this.sex = sex;
+    }
 
     public Date getCreateDate()
     {
@@ -113,6 +237,30 @@ public class User extends BaseEntity
     public void setRoleList(List<Role> roleList)
     {
         this.roleList = roleList;
+        for (Role role : roleList)
+        {
+            roleName = roleName + role.getName() + ",";
+        }
+    }
+
+    public String getRoleName()
+    {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName)
+    {
+        this.roleName = roleName;
+    }
+
+    public String getNick()
+    {
+        return nick;
+    }
+
+    public void setNick(String nick)
+    {
+        this.nick = nick;
     }
 
 }

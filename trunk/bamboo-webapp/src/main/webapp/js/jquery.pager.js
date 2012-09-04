@@ -46,14 +46,14 @@
     function renderpager(pagenumber, pagecount, buttonClickCallback) {
 
         // setup $pager to hold render
-    	var totalpage = $("<span class='ll'>共"+pagecount+"页 |&nbsp;</span>");
-    	var pagego= $("<span class='ll'>&nbsp; |&nbsp; 第 <input type='text' id='pageGo' name='pageGo' size='2' value='"+pagenumber+"' onkeypress='if(event.keyCode==13)gotoSubmit(this,"+pagecount+","+buttonClickCallback+");'/> 页<input type='button' value='go' style='vertical-align: middle' onclick='gotoSubmit(this,"+pagecount+","+buttonClickCallback+")'/></span>");
+    	var totalpage = $("<span class='pgEmpty' style='color: #666666;'>共"+pagecount+"页 </span>");
+    	//var pagego= $("<span class='ll'>&nbsp; |&nbsp; 第 <input type='text' id='pageGo' name='pageGo' size='2' value='"+pagenumber+"' onkeypress='if(event.keyCode==13)gotoSubmit(this,"+pagecount+","+buttonClickCallback+");'/> 页<input type='button' value='go' style='vertical-align: middle' onclick='gotoSubmit(this,"+pagecount+","+buttonClickCallback+")'/></span>");
         var $pager = $('<span></span>');
        
 
         // add in the previous and next buttons
-        $pager.append(totalpage);
-        //$pager.append(renderButton('首页', pagenumber, pagecount, buttonClickCallback)).append(renderButton('上一页', pagenumber, pagecount, buttonClickCallback));
+       // $pager.append(totalpage);
+        $pager.append(renderButton('首页', pagenumber, pagecount, buttonClickCallback)).append(renderButton('上一页', pagenumber, pagecount, buttonClickCallback));
 
         // pager currently only handles 10 viewable pages ( could be easily parameterized, maybe in next version ) so handle edge cases
         var startPoint = 1;
@@ -79,16 +79,16 @@
             var currentButton = $("<a style='cursor: pointer;'>" + (page) + "</a>");
            
 
-            page == pagenumber ? currentButton.addClass('pagenum02_cur') : currentButton.click(function() { buttonClickCallback(this.firstChild.data); });
+            page == pagenumber ? currentButton.addClass('pagenum_cur') : currentButton.click(function() { buttonClickCallback(this.firstChild.data); });
             currentButton.appendTo($pager);
            
         }
 
         // render in the next and last buttons before returning the whole rendered control back.
-       // $pager.append(renderButton('下一页', pagenumber, pagecount, buttonClickCallback)).append(renderButton('末页', pagenumber, pagecount, buttonClickCallback));
-        //$pager.append(totalpage);
+         $pager.append(renderButton('下一页', pagenumber, pagecount, buttonClickCallback)).append(renderButton('尾页', pagenumber, pagecount, buttonClickCallback));
+        $pager.append(totalpage);
         //$pager.append(pagetext);
-        $pager.append(pagego);
+        //$pager.append(pagego);
         return $pager;
     }
 
@@ -110,7 +110,7 @@
             case "下一页":
                 destPage = pagenumber + 1;
                 break;
-            case "末页":
+            case "尾页":
                 destPage = pagecount;
                 break;
         }

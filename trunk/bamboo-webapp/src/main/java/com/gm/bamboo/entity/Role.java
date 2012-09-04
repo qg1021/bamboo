@@ -33,16 +33,20 @@ public class Role extends BaseEntity
     /**
      * serialVersionUID long
      */
-    private static final long serialVersionUID = 1L;
+    private static final long  serialVersionUID = 1L;
 
-    private String            name;
+    private String             name;
 
     @ManyToMany
     @JoinTable(name = "acct_role_authority", joinColumns = { @JoinColumn(name = "role_id") }, inverseJoinColumns = { @JoinColumn(name = "authority_id") })
     @Fetch(FetchMode.SUBSELECT)
     @OrderBy("id")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    private List<Authority>   authorityList    = Lists.newArrayList();
+    private List<Authority>    authorityList    = Lists.newArrayList();
+
+    public final static String ROLE_TYPE_0      = "注册会员";
+
+    public final static String ROLE_TYPE_1      = "后台管理员";
 
     public Role()
     {

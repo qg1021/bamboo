@@ -11,15 +11,7 @@
           $("#mainForm").find("button[type='submit'],input[type='submit']").click(function(){
               $('#pageNo').val(1);
           });
-          $('#pageGo').keydown(function(e){
-        	  if(e.keyCode==13){
-        	     $('#gotobutton').click();
-        	     if($.browser.msie){
-            	     window.event.cancelBubble = true;
-            	     window.event.returnValue = false            	
-        	     }
-        	  }
-          }); 
+ 
 
 
         	            
@@ -48,7 +40,7 @@
          
      }
 </script>
-<div  class="pagernumber02"><span class="ll">共有 ${page.totalCount} 记录 | &nbsp;</span><span id="pager"></span></div>
+<div id="pager"  class="pagernumber rr"></div>
 <input type="hidden" name="page.pageNo" id="pageNo" value="${page.pageNo}"/>
 <input type="hidden" name="page.orderBy" id="orderBy" value="${page.orderBy}"/>
 <input type="hidden" name="page.order" id="order" value="${page.order}"/>

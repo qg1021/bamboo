@@ -43,99 +43,63 @@ import com.google.common.collect.Lists;
  */
 public class Global
 {
-    public final static int          MAX_PAGESIZE          = 2000;                 // 最大数据量
+    public final static int        MAX_PAGESIZE    = 2000;                // 最大数据量
 
-    // table
-    // 编辑标识位
+    public final static String     EXPORT_SUCCESS  = "导出成功";
 
-    public final static String       EXPORT_SUCCESS        = "导出成功";
+    public final static String     EXPORT_LOSE     = "导出失败";
 
-    public final static String       EXPORT_LOSE           = "导出失败";
+    public final static String     PUBLISH_SUCCESS = "发布成功";
 
-    public final static String       PUBLISH_SUCCESS       = "发布成功";
+    public final static String     PUBLISH_LOSE    = "发布失败";
 
-    public final static String       PUBLISH_LOSE          = "发布失败";
+    public final static String     CANCEL_SUCCESS  = "取消成功";
 
-    public final static String       CANCEL_SUCCESS        = "取消成功";
+    public final static String     CANCEL_LOSE     = "取消失败";
 
-    public final static String       CANCEL_LOSE           = "取消失败";
+    public final static String     AUDIT_SUCCESS   = "审核成功";
 
-    public final static String       AUDIT_SUCCESS         = "审核成功";
+    public final static String     AUDIT_LOSE      = "审核失败";
 
-    public final static String       AUDIT_LOSE            = "审核失败";
+    public final static String     UNAUDIT_SUCCESS = "审核不通过成功";
 
-    public final static String       UNAUDIT_SUCCESS       = "审核不通过成功";
+    public final static String     UNAUDIT_LOSE    = "审核不通过失败";
 
-    public final static String       UNAUDIT_LOSE          = "审核不通过失败";
+    public final static String     SAVE_SUCCESS    = "保存成功";
 
-    public final static String       SAVE_SUCCESS          = "保存成功";
+    public final static String     SAVE_LOSE       = "保存失败";
 
-    public final static String       SAVE_LOSE             = "保存失败";
+    public final static String     UPLOAD_SUCCESS  = "上传成功";
 
-    public final static String       UPLOAD_SUCCESS        = "上传成功";
+    public final static String     UPLOAD_LOSE     = "上传失败";
 
-    public final static String       UPLOAD_LOSE           = "上传失败";
+    public final static String     DELETE_SUCCESS  = "删除成功";
 
-    public final static String       DELETE_SUCCESS        = "删除成功";
+    public final static String     DELETE_LOSE     = "删除失败";
 
-    public final static String       DELETE_LOSE           = "删除失败";
+    public final static String     IMPORT_NO_DATA  = "导入的文件没有数据或者模版不正确";
 
-    public final static String       FIELD_EXISTED         = "此时间单元已存在";
+    public final static String     IMPORT_NO_FILE  = "没有导入文件";
 
-    public final static String       IMPORT_NO_DATA        = "导入的文件没有数据或者模版不正确";
+    public static List<LabelValue> BASEDATA_TYPES  = Lists.newArrayList();
 
-    public final static String       IMPORT_NO_FILE        = "没有导入文件";
+    public static String           picpath;
 
-    public static List<LabelValue>   BASEDATA_TYPES        = Lists
-                                                                   .newArrayList();
-
-    public static String             picpath;
+    public static List<LabelValue> newsTypeList    = Lists.newArrayList();
 
     static
     {
         BASEDATA_TYPES.add(new LabelValue("0", "学历"));
         BASEDATA_TYPES.add(new LabelValue("1", "类别"));
         picpath = PropertyUtils.getProperty("upload.path");
+        /** 行情资讯分类 **/
+        newsTypeList.add(new LabelValue("zcfg", "政策法规"));// ----0
+        newsTypeList.add(new LabelValue("rdzx", "热点资讯"));// ----1
+        newsTypeList.add(new LabelValue("hyxw", "行业新闻"));// ----2
+        newsTypeList.add(new LabelValue("zhbd", "展会报道"));// ----3
+        newsTypeList.add(new LabelValue("zsdt", "技术动态"));// ----4
+        newsTypeList.add(new LabelValue("zkzy", "竹库资源"));// ----5
 
     }
 
-    public static String             DEFAULT_WRITE_MAJOR   = "请填写专业";
-
-    public final static String       ATTACH_PATH           = "/newsattach";        // 保存培训资讯和报名流程附件的路径
-
-    public final static String       ATTACH_PREFIX         = "att";                // 保存培训资讯和报名流程附件的前缀名
-
-    public final static int          ATTACH_MAXSIZE        = 5 * 1024;             // 保存培训资讯和报名流程附件时的文件最大字节
-
-    public static final List<String> ATTACHFILETYPES       = Lists
-                                                                   .newArrayList(); // 培训资讯和报名流程附件时允许上传的类型
-
-    static
-    {
-        ATTACHFILETYPES.add("rar");
-        ATTACHFILETYPES.add("zip");
-        ATTACHFILETYPES.add("doc");
-        ATTACHFILETYPES.add("docx");
-        ATTACHFILETYPES.add("xls");
-        ATTACHFILETYPES.add("xlsx");
-        ATTACHFILETYPES.add("txt");
-        ATTACHFILETYPES.add("ppt");
-        ATTACHFILETYPES.add("pptx");
-        ATTACHFILETYPES.add("pdf");
-
-    }
-
-    public static final List<String> CERTTEMIMAGEFILETYPES = Lists
-                                                                   .newArrayList(); // 证书模板图片允许上传的类型
-    static
-    {
-        CERTTEMIMAGEFILETYPES.add("jpg");
-        CERTTEMIMAGEFILETYPES.add("JPG");
-        CERTTEMIMAGEFILETYPES.add("png");
-        CERTTEMIMAGEFILETYPES.add("PNG");
-        CERTTEMIMAGEFILETYPES.add("gif");
-        CERTTEMIMAGEFILETYPES.add("GIF");
-    }
-
-    public final static String       CERTTEMPLATE_PREFIX   = "ctemp";              // 保存证书模板图片的前缀名
 }

@@ -5,7 +5,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<%@ include file="/common/meta.jsp" %>
-	<title>${typeName}</title>
+	<title>中国竹木工艺网(www.bamboo-crafts.cn)-${typeName.label}</title>
+	<meta content="${typeName.value}" name="activemenu" />
 	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
 	<script src="${ctx}/js/jquery.js" type="text/javascript"></script>
 	<script src="${ctx}/js/jcommon.js" type="text/javascript"></script>
@@ -59,45 +60,44 @@
 	}
 	</script>
 </head>
-<body>
-<div id="wrapper">
-	<%@ include file="/common/top.jsp"%>
-	<!--the end of head-->
-	<div id="content">  
-		<!-- 左侧内容 column  start -->
-		<%@ include file="/common/menu.jsp"%>
-		<!-- 左侧内容 column  end -->
-		<!-- 右侧内容 column  start -->  
-		<div class="right_content">
-			<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
-				<tr  height="28">
-					<td  background="${ctx}/image/admin/title_bg1.jpg">当前位置&gt;&gt;${typeName}</td>
-				</tr>
-				<tr>
-					<td bgcolor="#b1ceef" height="1"></td>
-				</tr>
-				<tr height="20">
-					<td background="${ctx}/image/admin/shadow_bg.jpg"></td>
-				</tr>
-			</table>
-			<div class="pagehead01"></div>
+<body> 
+	<div id="wrapper"> 
+		<%@include file="/common/header.jsp" %>
+		<!-- 正文内容 start -->
+		<div id="content"> 
+		    <!-- 左侧菜单 总shell start -->
+		    <%@include file="/common/adminleft.jsp" %>
+		    <!-- 左侧菜单 总shell end --> 
+		    
+			<!-- 右侧内容 start -->
+    		<div class="right_shell"> 
+			<h2 class="mb10 box_solid_bottom">${typeName.label}</h2>
 				<div id="message" style="line-height: 35px;">
 					<s:actionmessage theme="custom" cssClass="tipbox"/>
 				</div>
     			<form id="mainForm" action="news.action?mtype=${mtype}" method="post">
-    				<ul class="top_serach_box">
-		    		<li class="rr"><button type="submit">搜索</button></li>
-			        <li class="ll mr20">标题
-			        	<input type="text" id="title" name="filter_LIKES_title" size="15" value="${param['filter_LIKES_title']}"/>
-			        </li>
-    			</ul>
-    			<p class="ll mt15">
-    				<button id="btnCreate" type="button" onclick="window.location.href='news!input.action?mtype=${mtype}'">新增</button>
-    				<button id="btnDelete" type="button" onclick="onBatchDelete();">删除</button>
-    				<button id="btnPublish" type="button" onclick="onPublish();">发布</button>
-    				<button id="btnCancel" type="button" onclick="onCancel();">取消发布</button>
-    			</p>
-	    			<table class="tablebox">
+					<div class="box_search">
+						<ul>
+							<li>
+								<input type="submit" value="查询" class="rr" />							
+								<span>
+									<label class="ml20">标题</label>
+									<input type="text" id="title" name="filter_LIKES_title" size="30" value="${param['filter_LIKES_title']}"/>
+								</span>
+								<span>
+									<label class="ml20">状态</label>
+		                     	 	<s:select list="#{'true':'已发布','false':'未发布'}"  id="ispublish" name="filter_EQB_ispublish"  value="#parameters.filter_EQB_ispublish" cssStyle="width:85px;" headerKey="" headerValue="--全 部--"/> 
+		                     	 </span>
+							</li>
+						</ul>
+					</div> 
+					<p class="ll mt15">
+	    				<button id="btnCreate" type="button" onclick="window.location.href='news!input.action?mtype=${mtype}'">新增</button>
+	    				<button id="btnDelete" type="button" onclick="onBatchDelete();">删除</button>
+	    				<button id="btnPublish" type="button" onclick="onPublish();">发布</button>
+	    				<button id="btnCancel" type="button" onclick="onCancel();">取消发布</button>
+    				</p>
+					<table class="tablebox">
 					    <tr>
 					    	<th width="5%"><input type="checkbox" id="checkall" name="checkall"/></th>
 					        <th width="40%">标题</th>
@@ -108,7 +108,7 @@
 	    				<s:iterator value="page.result" status="st">
 						   <tr>
 						   		<td title=""><input type="checkbox" id="ids" name="ids" value="${id}"/></td>
-						        <td title="${name}"><common:cut string="${title}" len="30"/></td>
+						        <td title="${title}"><common:cut string="${title}" len="30"/></td>
 						        <td><s:date name="createdate" format="yyyy-MM-dd HH:mm"/></td>
 						        <td>${statusName}</td>
 						        <td>
@@ -123,13 +123,14 @@
 							</tr>  
 						</s:if>      
 	    			</table>
-	    			<!-- 翻页 start  -->
 	    			<%@ include file="/common/page.jsp"%>
-					<!-- 翻页 end  -->
-				</form>
-			</div>
-			<!-- 右侧内容 column  end-->    
-		</div> <!-- content  end-->  
-	</div><!-- wrapper  end-->  
+				</form>   
+    		</div>
+    <!-- 右侧内容 end --> 
+			<p class=" del_float"></p>
+		</div>
+		<!-- 正文内容 end --> 
+	      <%@include file="/common/footer.jsp" %>
+	</div>
 </body>
 </html>

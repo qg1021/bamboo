@@ -26,6 +26,10 @@
 //-------------------------------------------------------------------------
 package com.gm.bamboo.dao;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.stereotype.Component;
 import org.springside.modules.orm.hibernate.HibernateDao;
 
@@ -44,5 +48,18 @@ import com.gm.bamboo.entity.User;
 public class UserHibernateDao extends HibernateDao<User, Long> implements
         UserDao
 {
+    /**
+     * {@inheritDoc}
+     * 
+     * @since 2012-9-4
+     * @see com.gm.bamboo.api.UserDao#batchDelete(java.util.List)
+     */
+    @Override
+    public void batchDelete(List<Long> ids)
+    {
+        String hql = "delete from User where id in(:ids)";
+        Map<String, List<Long>> values = Collections.singletonMap("ids", ids);
+        super.batchExecute(hql, values);
 
+    }
 }

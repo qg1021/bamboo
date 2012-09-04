@@ -1,11 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/common/taglibs.jsp" %>
+<%@page import="com.gm.bamboo.util.CommonUtils"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<%@ include file="/common/meta.jsp" %>
-	<title>${typeName}</title>
+	<title>中国竹木工艺网(www.bamboo-crafts.cn)-${typeName.label}</title>
+	<meta content="${typeName.value}" name="activemenu" />
 	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
 	<link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet"/>
 	<link rel="stylesheet" href="${ctx}/KindEditor/themes/default/default.css" />
@@ -13,12 +15,14 @@
 	<script src="${ctx}/js/jquery.js" type="text/javascript"></script>
 	<script src="${ctx}/js/validate/jquery.validate.js" type="text/javascript"></script>
 	<script src="${ctx}/js/validate/messages_cn.js" type="text/javascript"></script>
+	<script src="${ctx}/js/DatePicker/WdatePicker.js" type="text/javascript" ></script>
 	<script type="text/javascript" src="${ctx}/KindEditor/kindeditor-min.js"></script>
 	<script type="text/javascript" src="${ctx}/KindEditor/lang/zh_CN.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
 		//聚焦第一个输入框
-		$("#name").focus();
+		$("#title").focus();
+		setDefaultDate();
 		$("#inputForm").validate({
 			rules: {
 				title: {
@@ -64,63 +68,64 @@
 		 onSubmit();   
 		}
 	};
+	function setDefaultDate(){
+		if(document.getElementById('id').value==''){
+			$("#publishdate").val('<%=CommonUtils.getCurrentDate("yyyy-MM-dd")%>');
+		}
+	}
 
 </script>
 </head>
 <body>
-<div id="wrapper">
-	<%@ include file="/common/top.jsp"%>
-	<!--the end of head-->
-	<div id="content">  
-		<!-- 左侧内容 column  start -->
-		<%@ include file="/common/menu.jsp"%>
-		<!-- 左侧内容 column  end -->
-		<!-- 右侧内容 column  start -->  
-		<div class="right_content">
-			<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
-				<tr  height="28">
-					<td  background="${ctx}/image/admin/title_bg1.jpg">当前位置&gt;&gt;${typeName}</td>
-				</tr>
-				<tr>
-					<td bgcolor="#b1ceef" height="1"></td>
-				</tr>
-				<tr height="20">
-					<td background="${ctx}/image/admin/shadow_bg.jpg"></td>
-				</tr>
-			</table>
-			<div class="pagehead01"></div>
-				<div class="top_serach_box">
-					<form id="inputForm" name="inputForm" action="news!save.action?mtype=${mtype}" method="post">
-						<input type="hidden" id="id" name="id" value="${id}"/>
-						<ul class="form district_edit_form">
-					  		<li>
-					  			<label>标题<span class="colorred">*</span></label>
-					  			<input id="title" name="title" value="${title}" type="text" maxlength="100" style="width:300px;" />
-					  		</li>
-					  		<li>
-					  			<label>来源</label>
-					  			<input id="source" name="source" value="${source}" type="text" maxlength="100" style="width:300px;" />
-					  		</li>
-					  		<li>
-					  			<label>外部链接</label>
-					  			<input id="link" name="link" value="${link}" type="text" maxlength="100" style="width:300px;" />
-					  		</li>
-					  		<li >
-					  			<label style="vertical-align: top;">内容</label>
-					  			<textarea id="content" name="content" cols="100" rows="8" style="width:800px;height:270px;visibility:hidden;">${content}</textarea>
-			        			<span id="error_content"></span>
-					  		</li>
-					  	</ul>
-						<p class="button_box">
-							<button class="btn_confirm" type="submit">保存</button> 
-							<button class="btn_cancell" type="button" onclick="window.location.href='news.action?mtype=${mtype}'">取消</button>
-						</p>
-						
-					</form>
-				</div>
-			</div>
-			<!-- 右侧内容 column  end-->    
-		</div> <!-- content  end-->  
-	</div><!-- wrapper  end-->  
+<div id="wrapper"> 
+		<%@include file="/common/header.jsp" %>
+		<!-- 正文内容 start -->
+		<div id="content"> 
+		    <!-- 左侧菜单 总shell start -->
+		    <%@include file="/common/adminleft.jsp" %>
+		    <!-- 左侧菜单 总shell end --> 
+		    
+			<!-- 右侧内容 start -->
+    		<div class="right_shell"> 
+				<h2 class="mb10 box_solid_bottom">${typeName.label}</h2>
+				<form id="inputForm" name="inputForm" action="news!save.action?mtype=${mtype}" method="post">
+					<input type="hidden" id="id" name="id" value="${id}"/>
+	    			<ul class="form">
+						<li>以下有<b>*</b>的内容为必填项：</li>
+						<li>
+				  			<label>标题<b>*</b></label>
+				  			<input id="title" name="title" value="${title}" type="text" maxlength="100" style="width:300px;" />
+				  		</li>
+				  		<li>
+				  			<label>来源</label>
+				  			<input id="source" name="source" value="${source}" type="text" maxlength="100" style="width:300px;" />
+				  		</li>
+				  		<li>
+				  			<label>发布时间</label>
+				  			<input id="publishdate" class="Wdate" name="publishdate" onclick="WdatePicker();" value="<s:date name="publishdate" format="yyyy-MM-dd"/>" readonly="readonly" type="text" maxlength="100" />
+				  		</li>
+				  		<li>
+				  			<label>外部链接</label>
+				  			<input id="link" name="link" value="${link}" type="text" maxlength="100" style="width:300px;" />
+				  		</li>
+				  		<li >
+				  			<label style="vertical-align: top;">内容</label>
+				  			<textarea id="content" name="content" cols="100" rows="8" style="width:750px;height:270px;visibility:hidden;">${content}</textarea>
+		        			<span id="error_content"></span>
+				  		</li>
+					</ul>    
+	 				<p class="button_box">
+	 					<button class="course_btn_orange" type="button">预览</button> &nbsp;
+	 					<button class="course_btn_orange" type="button" onclick="onSubmit();">保存</button> &nbsp;
+	 					<button class="course_btn_grey" type="button" onclick="location.href='news.action?mtype=${mtype}'">取消</button>&nbsp;
+	 				</p> 
+	 			</form>
+ 			</div>
+    		<!-- 右侧内容 end --> 
+			<p class=" del_float"></p>
+		</div>
+		<!-- 正文内容 end --> 
+		<%@include file="/common/footer.jsp" %>
+	</div>
 </body>
 </html>

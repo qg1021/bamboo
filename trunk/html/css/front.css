@@ -457,17 +457,25 @@ a { text-decoration:none;}
     clear: both;
 }
 .index_category {
+	background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #0D9C04;
-    border-radius: 3px 3px 3px 3px;
+    border-radius: 3px;
     float: left;
     padding: 8px;
     width: 219px;
+	behavior: url(css/ie-css3.htc);
+	position:relative; 
+	z-index:2; 
+	
 }
 .category_bk {
     background: none repeat scroll 0 0 #E1FBE0;
     border-radius: 8px 8px 8px 8px;
     margin: 4px 0;
     padding: 8px;
+	behavior: url(css/ie-css3.htc);
+	position:relative; 
+	z-index:2; 
 }
 .category_bk ul {
     margin: 8px 0;

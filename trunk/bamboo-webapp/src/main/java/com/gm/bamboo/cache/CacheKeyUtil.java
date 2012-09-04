@@ -39,6 +39,26 @@ public class CacheKeyUtil
     /** 新闻焦点、热点资讯信息Key **/
     public static String NewsPrefix         = cachePerfix + "News";
 
+    /** 产品分类key **/
+    public static String CategoryPrefix     = cachePerfix + "Categorys";
+
+    /**
+     * 构建所有分类cachekey
+     * 
+     * @return
+     */
+    public static String buildCategoryKey(Long parentId)
+    {
+        if (parentId == null)
+        {
+            return CategoryPrefix + "_" + "allcateogry";
+        }
+        else
+        {
+            return CategoryPrefix + "_" + parentId;
+        }
+    }
+
     public static String buildNewsKey(int type)
     {
         return NewsPrefix + "_" + type;

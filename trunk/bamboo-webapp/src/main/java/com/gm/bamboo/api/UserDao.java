@@ -26,6 +26,8 @@
 //-------------------------------------------------------------------------
 package com.gm.bamboo.api;
 
+import java.util.List;
+
 import cn.common.lib.springside.orm.BaseDao;
 
 import com.gm.bamboo.entity.User;
@@ -40,5 +42,14 @@ import com.gm.bamboo.entity.User;
  */
 public interface UserDao extends BaseDao<User, Long>
 {
+    /**
+     * 
+     * 批量删除
+     * 
+     * @since 2012-7-25
+     * @author qingang
+     * @param ids
+     */
+    public void batchDelete(List<Long> ids);
 
 }

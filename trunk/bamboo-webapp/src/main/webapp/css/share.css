@@ -434,7 +434,7 @@ a.btn_white:active, input.btn_white:active, button.btn_white:active { top: 1px ;
 	}	
 
 .course_btn_orange {
-    background-color: #f7941d;
+    background-color: #0D9C04;
 	border: 0 none;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px 5px 5px 5px;
@@ -444,7 +444,7 @@ a.btn_white:active, input.btn_white:active, button.btn_white:active { top: 1px ;
 	cursor:pointer;
 	}
 .course_btn_orange:hover {
-    background-color: #f26522;
+    background-color: #4EB71F;
     border: 1px solid rgba(0, 0, 0, 0.1);
     color: #FFFFFF;
 	}	

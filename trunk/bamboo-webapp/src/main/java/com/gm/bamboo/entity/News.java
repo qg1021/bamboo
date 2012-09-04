@@ -42,11 +42,23 @@ public class News extends BaseEntity
 
     private String            link;                 // 链接
 
+    private long              viewcount;            // 浏览次数
+
     private int               type;                 // 0：新闻焦点 1：热点资讯
 
     public final static int   TYPE_0           = 0;
 
     public final static int   TYPE_1           = 1;
+
+    public long getViewcount()
+    {
+        return viewcount;
+    }
+
+    public void setViewcount(long viewcount)
+    {
+        this.viewcount = viewcount;
+    }
 
     @Transient
     public String getStatusName()

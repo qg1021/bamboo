@@ -1,5 +1,7 @@
 package com.gm.bamboo.core;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -69,6 +71,19 @@ public class UserManager extends EntityManager<User, Long>
     {
         user.setPassword(password);
         super.save(user);
+    }
+
+    /**
+     * 
+     * 批量删除
+     * 
+     * @since 2012-7-26
+     * @author qingang
+     * @param ids
+     */
+    public void batchDelete(List<Long> ids)
+    {
+        userDao.batchDelete(ids);
     }
 
     @Override
