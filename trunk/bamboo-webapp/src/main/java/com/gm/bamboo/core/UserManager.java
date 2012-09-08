@@ -34,11 +34,11 @@ public class UserManager extends EntityManager<User, Long>
      * 根据用户名获得用户
      * 
      * @since 2012-1-11
-     * @author fangyong
+     * @author qingang
      * @param username
      * @return
      */
-    public User getUserByUsername(String username) throws Exception
+    public User getUserByUsername(String username)
     {
         return userDao.findUniqueBy("loginName", username);
     }

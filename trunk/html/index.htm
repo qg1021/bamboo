@@ -59,7 +59,7 @@ $(function(){
 <div class="shell976">
 
 <span class="right_nav_bar" ><span class="green_rectangle">admin 您好</span>中国竹木工艺网，欢迎您！<span class="learn_center">我的会员中心>></span>  [退出] 
- <ul class="learn_center_popup">
+ <ul class="learn_center_popup" style="display:none">
 	<li><a href="#">进入中心</a></li>
 	<li><a href="#">个人信息</a></li>
 	<li><a href="#">修改密码</a></li>
@@ -79,13 +79,29 @@ $(function(){
 <!--the end of top nav-->
 <div id="wrapper">
 	<div id="header">
-		<div class="top_head">
-			<img src="image/top.jpg" alt="" width="960" height="150"/>
+		<div  class="top_head">
+			<div class="ll"><a href="index.htm"><img border="0"  alt="中国竹木工艺网" src="css/image/top.jpg"/></a></div>
+			<div class="search">
+				<dl>
+					<dt id="webSelect">
+						<span class="">供应</span>
+						<span class="">求购</span>
+						<span class="">招商</span>
+						<span class="">品牌</span>
+						<span class="selected">资讯</span>
+					</dt>
+					<dd>
+						<input class="easyui-searchbox" data-options="prompt:'输入关键字',menu:'#mm',searcher:function(value,name){alert(value+':'+name)}" style="width:350px"></input>
+					</dd>
+				</dl>
+			</div>
+		
+        
 		</div>
 		<div class="headermenu">
 			<ul>
-			<li class="fff">
-			<a href="index_1.html">首页</a>
+			<li class="fffs">
+				<a   href="index.htm">首页</a>
 			</li>
 			<li class="fff">
 			<a href="index_1.html">供应</a>
@@ -106,21 +122,7 @@ $(function(){
 			<a href="index_4.html">品牌</a>
 			</li>
 			</ul>
-			<div class="bottom_nav style_bottom_nav">
-		<!--the beginning of menu 下面的 搜索 box--> 
-
-		
-		<input class="easyui-searchbox" data-options="prompt:'输入关键字',menu:'#mm',searcher:function(value,name){alert(value+':'+name)}" style="width:350px"></input>
-			<div id="mm" style="width:43px">
-				<div data-options="name:'1'">供应</div>
-				<div data-options="name:'2'">求购</div>
-				<div data-options="name:'3'">资讯</div>
-				<div data-options="name:'4'">行情</div>
-				<div data-options="name:'5'">品牌</div>
-				<div data-options="name:'5'">招商</div>
-			</div>
-			<!--the end of menu 下面的 搜索 box -->	
-		</div>
+			
 		</div>
 		
 		
@@ -129,10 +131,10 @@ $(function(){
 		<div class="shell01">
 			<!-- 产品分类  start -->
 			<div class="index_category">
-				<p><img src="image/category_head.png"></p>
+				<p><img src="css/image/category_head.png"></p>
 				<div class="category_bk">
 					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="image/more.png"></a> 竹工艺品 </p>
+					<img src="css/image/more.png"></a> 竹工艺品 </p>
 					<ul>
 						<li><a href="#">编织工艺</a></li>
 						<li><a href="#">雕刻工艺</a></li>
@@ -142,7 +144,7 @@ $(function(){
 						<li><a href="#">根雕</a></li>
 					</ul>
 					<p class="clearb"></p>
-					<p class="category_title"><a class="rr mt5" href="#"><img src="image/more.png"></a> 竹家具 </p>
+					<p class="category_title"><a class="rr mt5" href="#"><img src="css/image/more.png"></a> 竹家具 </p>
 					<ul>
 						<li><a href="#">原竹家具</a></li>
 						<li><a href="#">板式家具</a></li>
@@ -153,7 +155,7 @@ $(function(){
 					</ul>
 					<p class="clearb"></p>
 					<p class="category_title">
-					<a class="rr mt5" href="#"><img src="image/more.png"></a> 竹地板</p>
+					<a class="rr mt5" href="#"><img src="css/image/more.png"></a> 竹地板</p>
 					<ul>
 						<li><a href="#">本色地板</a></li>
 						<li><a href="#">碳化地板</a></li>
@@ -163,7 +165,7 @@ $(function(){
 					</ul>
 					<p class="clearb"></p>
 					<p class="category_title">
-					<a class="rr mt5" href="#"><img src="image/more.png"></a>竹纤维</p>
+					<a class="rr mt5" href="#"><img src="css/image/more.png"></a>竹纤维</p>
 					<ul>
 						<li><a href="#">卫浴系列</a></li>
 						<li><a href="#">服饰系列</a></li>
@@ -175,7 +177,7 @@ $(function(){
 					<p class="clearb"></p>  
 					  
 					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="image/more.png"></a>竹窗帘</p>
+					<img src="css/image/more.png"></a>竹窗帘</p>
 					<ul>
 						<li><a href="#">竹编织窗帘</a></li>
 						<li><a href="#">百叶窗</a></li>
@@ -186,7 +188,7 @@ $(function(){
 					</ul>
 					<p class="clearb"></p>  
 					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="image/more.png"></a>竹板材</p>
+					<img src="css/image/more.png"></a>竹板材</p>
 					<ul>
 						<li><a href="#">家具板</a></li>
 						<li><a href="#">楼梯板</a></li>
@@ -197,7 +199,7 @@ $(function(){
 					</ul>
 					<p class="clearb"></p>  
 					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="image/more.png"></a>竹垫</p>
+					<img src="css/image/more.png"></a>竹垫</p>
 					<ul>
 						<li><a href="#">沙发坐垫</a></li>
 						<li><a href="#">汽车坐垫</a></li>
@@ -208,7 +210,7 @@ $(function(){
 					</ul>
 					<p class="clearb"></p>  
 					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="image/more.png"></a>竹炭</p>
+					<img src="css/image/more.png"></a>竹炭</p>
 					<ul>
 						<li><a href="#">原炭</a></li>
 						<li><a href="#">竹炭包</a></li>
@@ -357,22 +359,22 @@ $(function(){
 		<div title="广告位显示">
 			<div class="middle_ad ll" style="margin-right:2px;">
 				<a  target="_blank" href="member/offer.jsp">
-					<img src="image/a-3.gif" width="235px" height="84"/>
+					<img src="css/image/a-3.gif" width="235px" height="84"/>
 				</a>
 			</div>
 			<div class="middle_ad ll" style="margin-right:2px;">
 				<a  target="_blank" href="member/offer.jsp">
-					<img src="image/a-3.gif" width="235px" height="84px"/>
+					<img src="css/image/a-3.gif" width="235px" height="84px"/>
 				</a>
 			</div>
 			<div class="middle_ad ll" style="margin-right:2px;">
 				<a  target="_blank" href="member/offer.jsp">
-					<img src="image/a-3.gif" width="235px" height="84px"/>
+					<img src="css/image/a-3.gif" width="235px" height="84px"/>
 				</a>
 			</div>
 			<div class="middle_ad ll">
 				<a  target="_blank" href="member/offer.jsp">
-					<img src="image/a-3.gif" width="235px" height="84px"/>
+					<img src="css/image/a-3.gif" width="235px" height="84px"/>
 				</a>
 			</div>
 		<div>
@@ -380,7 +382,7 @@ $(function(){
 	
 			<div style="margin-right:9px;" class="index_news_2box ll">
 				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a> 政策法规</p>
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"></a> 政策法规</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -393,7 +395,7 @@ $(function(){
 			</div>
 			<div style="margin-right:9px;" class="index_news_2box">
 				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>热点资讯</p>
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"></a>热点资讯</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -406,7 +408,7 @@ $(function(){
 			</div>
 			<div  class="index_news_2box">
 				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>行业新闻</p>
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"></a>行业新闻</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -451,7 +453,7 @@ $(function(){
 			</div>
 			<div style="margin-right:9px;" class="index_news_2box ll">
 				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a> 展会报道</p>
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"></a> 展会报道</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -464,7 +466,7 @@ $(function(){
 			</div>
 			<div style="margin-right:9px;" class="index_news_2box">
 				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>技术动态</p>
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"></a>技术动态</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -477,7 +479,7 @@ $(function(){
 			</div>
 			<div  class="index_news_2box">
 				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="image/more.png"></a>竹库资源</p>
+					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"></a>竹库资源</p>
 					<ul>
 						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
 						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
@@ -514,11 +516,11 @@ $(function(){
 		<div class="ta_c">
 			<p class="mb5">版权 © 2002-2012  中国竹木工艺网  （<a target="_blank" href="http://www.bamboo-crafts.cn"> bamboo-crafts.cn</a>）所有,  保留所有权利</p>
 			<p class="mb5">
-				<a target="_blank" href="http://net.china.com.cn/index.htm"><img src="image/report.gif"></a>&nbsp;&nbsp;
-				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="image/110.gif"></a>&nbsp;&nbsp;
-				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="image/ppaa.gif"></a>&nbsp;&nbsp;
+				<a target="_blank" href="http://net.china.com.cn/index.htm"><img src="css/image/report.gif"></a>&nbsp;&nbsp;
+				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="css/image/110.gif"></a>&nbsp;&nbsp;
+				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="css/image/ppaa.gif"></a>&nbsp;&nbsp;
 			</p>
-			<p class="icp mb5"><img src="image/icp.gif"><a target="_blank" href="http://www.miibeian.gov.cn/">浙ICP备09018754号</a></p>
+			<p class="icp mb5"><img src="css/image/icp.gif"><a target="_blank" href="http://www.miibeian.gov.cn/">浙ICP备09018754号</a></p>
 		</div>
 	</div>
 	</div>

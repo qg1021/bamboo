@@ -17,7 +17,7 @@
 		<s:intercept-url pattern="/backend/*" access="hasAnyRole('后台管理员')" />
 		<s:intercept-url pattern="/user/*" access="hasAnyRole('注册会员')" />
 		<s:form-login login-page="/login.action"   authentication-failure-url="/login.action?error=true"  authentication-success-handler-ref="successHandler"/>
-		<s:logout logout-success-url="/login.action"/>
+		<s:logout logout-success-url="/index.action"/>
 	</s:http>
 
 	<!-- 认证配置, 使用userDetailsService提供的用户信息 -->
@@ -34,7 +34,7 @@
 	   <property name="customTargetUrl" >
 	   		<props>
 	   			<prop key="后台管理员">/backend/index.action</prop>
-	   			<prop key="注册会员">/user/index.action</prop>
+	   			<prop key="注册会员">/user/user.action</prop>
 	   		</props>
 	   </property>
 	   <property name="alwaysUseDefaultTargetUrl" value="false" />

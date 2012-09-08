@@ -1,6 +1,7 @@
 package com.gm.bamboo.account;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Properties;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
@@ -18,13 +20,19 @@ import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.util.StringUtils;
 import org.springside.modules.security.springsecurity.SpringSecurityUtils;
 
+import com.gm.bamboo.core.UserManager;
+import com.gm.bamboo.entity.User;
+
 public class UserSuccessHandler extends SimpleUrlAuthenticationSuccessHandler
 {
-    protected final Log  logger       = LogFactory.getLog(this.getClass());
+    protected final Log   logger       = LogFactory.getLog(this.getClass());
 
-    private Properties   customTargetUrl;
+    private Properties    customTargetUrl;
 
-    private RequestCache requestCache = new HttpSessionRequestCache();
+    private RequestCache  requestCache = new HttpSessionRequestCache();
+
+    @Autowired
+    protected UserManager userManager;
 
     public Properties getCustomTargetUrl()
     {
@@ -48,7 +56,15 @@ public class UserSuccessHandler extends SimpleUrlAuthenticationSuccessHandler
     {
 
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
+        if (userDetails != null)
+        {
+            User user = userManager
+                    .getUserByUsername(userDetails.getUsername());
+            user.setLastLoginDate(new Date());// 记录最后登录时间
+            user.setLoginTimes(user.getLoginTimes() + 1);// 记录登录次数
+            userManager.save(user);
+            request.getSession().setAttribute("userid", user.getId());
+        }
         if (!userDetails.getAuthorities().isEmpty()
                 && !customTargetUrl.isEmpty())
         {

@@ -43,49 +43,55 @@ import com.google.common.collect.Lists;
  */
 public class Global
 {
-    public final static int        MAX_PAGESIZE    = 2000;                // 最大数据量
+    public final static int        MAX_PAGESIZE     = 2000;                // 最大数据量
 
-    public final static String     EXPORT_SUCCESS  = "导出成功";
+    public final static String     EXPORT_SUCCESS   = "导出成功";
 
-    public final static String     EXPORT_LOSE     = "导出失败";
+    public final static String     EXPORT_LOSE      = "导出失败";
 
-    public final static String     PUBLISH_SUCCESS = "发布成功";
+    public final static String     PUBLISH_SUCCESS  = "发布成功";
 
-    public final static String     PUBLISH_LOSE    = "发布失败";
+    public final static String     PUBLISH_LOSE     = "发布失败";
 
-    public final static String     CANCEL_SUCCESS  = "取消成功";
+    public final static String     CANCEL_SUCCESS   = "取消成功";
 
-    public final static String     CANCEL_LOSE     = "取消失败";
+    public final static String     CANCEL_LOSE      = "取消失败";
 
-    public final static String     AUDIT_SUCCESS   = "审核成功";
+    public final static String     AUDIT_SUCCESS    = "审核成功";
 
-    public final static String     AUDIT_LOSE      = "审核失败";
+    public final static String     AUDIT_LOSE       = "审核失败";
 
-    public final static String     UNAUDIT_SUCCESS = "审核不通过成功";
+    public final static String     UNAUDIT_SUCCESS  = "审核不通过成功";
 
-    public final static String     UNAUDIT_LOSE    = "审核不通过失败";
+    public final static String     UNAUDIT_LOSE     = "审核不通过失败";
 
-    public final static String     SAVE_SUCCESS    = "保存成功";
+    public final static String     SAVE_SUCCESS     = "保存成功";
 
-    public final static String     SAVE_LOSE       = "保存失败";
+    public final static String     SAVE_LOSE        = "保存失败";
 
-    public final static String     UPLOAD_SUCCESS  = "上传成功";
+    public final static String     MODIFY_SUCCESS   = "修改成功";
 
-    public final static String     UPLOAD_LOSE     = "上传失败";
+    public final static String     MODIFY_LOSE      = "修改失败";
 
-    public final static String     DELETE_SUCCESS  = "删除成功";
+    public final static String     CURRENT_PASSWORD = "当前密码输入不正确";
 
-    public final static String     DELETE_LOSE     = "删除失败";
+    public final static String     UPLOAD_SUCCESS   = "上传成功";
 
-    public final static String     IMPORT_NO_DATA  = "导入的文件没有数据或者模版不正确";
+    public final static String     UPLOAD_LOSE      = "上传失败";
 
-    public final static String     IMPORT_NO_FILE  = "没有导入文件";
+    public final static String     DELETE_SUCCESS   = "删除成功";
 
-    public static List<LabelValue> BASEDATA_TYPES  = Lists.newArrayList();
+    public final static String     DELETE_LOSE      = "删除失败";
+
+    public final static String     IMPORT_NO_DATA   = "导入的文件没有数据或者模版不正确";
+
+    public final static String     IMPORT_NO_FILE   = "没有导入文件";
+
+    public static List<LabelValue> BASEDATA_TYPES   = Lists.newArrayList();
 
     public static String           picpath;
 
-    public static List<LabelValue> newsTypeList    = Lists.newArrayList();
+    public static List<LabelValue> newsTypeList     = Lists.newArrayList();
 
     static
     {

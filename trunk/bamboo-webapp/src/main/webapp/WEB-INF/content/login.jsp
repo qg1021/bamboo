@@ -7,7 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>后台登录</title>
+<title>登录中国竹木工艺网</title>
 <%@ include file="/common/meta.jsp" %>
 <link href="${ctx}/css/front.css" rel="stylesheet" type="text/css" /> 
 <link href="${ctx}/css/login.css" rel="stylesheet" type="text/css" /> 
@@ -59,6 +59,7 @@ document.onkeydown = function(e){
 <div id="wrapper">
 	<div id="header">
 		<%@ include file="/common/header.jsp" %>
+		<%@ include file="/common/menu.jsp" %>
 	</div>
 	<div id="content">
 			<div class="supertitle">
@@ -90,11 +91,6 @@ document.onkeydown = function(e){
 	         					<span class="label02"> 密码 </span>
 	            				<input class="input" type="password" id="j_password" name="j_password"><span id="error_j_password"></span>
 	          				</li>
-	          				<li class="rememberme clearit">
-	            				<label style="width:20px;">
-	              					<input type="checkbox" name="checkbox" id="checkbox" />
-	            				</label>记住我的登录名 
-	            			</li>
 	        			</ul>
 	        			<div id="buttonbox" class="btnbox m20 button01 clearl">
 	          				<input type="submit" value="登 录"/>
@@ -102,7 +98,7 @@ document.onkeydown = function(e){
         			</form>
         			<div class="loign_f font_s14 ll">
           				<p class=" ll"> <a  href="#">忘记密码？</a> </p>
-          				<p class=" rr"> - 还没有注册？<a  href="reg.htm"> 请注册>></a></p>
+          				<p class=" rr"> - 还没有注册？<a  href="register.action"> 请注册&gt;&gt;</a></p>
         			</div>
       			</div>
       			<div class="toreg rr"></div>

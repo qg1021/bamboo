@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<%@ include file="/common/meta.jsp" %>
-	<title>中国竹木工艺网(www.bamboo-crafts.cn)-用户管理</title>
+	<title>中国竹木工艺网(www.crafts-bamboo.com)-用户管理</title>
 	<meta content="user" name="activemenu" />
 	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
 	<link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet"/>

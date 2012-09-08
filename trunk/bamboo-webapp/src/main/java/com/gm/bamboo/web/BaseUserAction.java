@@ -108,4 +108,14 @@ public class BaseUserAction extends CrudActionSupport<User>
         return null;
     }
 
+    public User getEntity()
+    {
+        return entity;
+    }
+
+    public void setEntity(User entity)
+    {
+        this.entity = entity;
+    }
+
 }

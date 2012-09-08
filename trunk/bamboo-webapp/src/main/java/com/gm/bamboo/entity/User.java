@@ -65,6 +65,30 @@ public class User extends BaseEntity
 
     private String            pwdanswer;            // 密码问题答案
 
+    private Date              lastLoginDate;        // 最后登录时间
+
+    private long              loginTimes;           // 登录次数
+
+    public Date getLastLoginDate()
+    {
+        return lastLoginDate;
+    }
+
+    public void setLastLoginDate(Date lastLoginDate)
+    {
+        this.lastLoginDate = lastLoginDate;
+    }
+
+    public long getLoginTimes()
+    {
+        return loginTimes;
+    }
+
+    public void setLoginTimes(long loginTimes)
+    {
+        this.loginTimes = loginTimes;
+    }
+
     public String getPwdquestion()
     {
         return pwdquestion;
@@ -239,7 +263,7 @@ public class User extends BaseEntity
         this.roleList = roleList;
         for (Role role : roleList)
         {
-            roleName = roleName + role.getName() + ",";
+            roleName = role.getName();
         }
     }
 
