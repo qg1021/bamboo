@@ -58,7 +58,7 @@ public class CategoryDaoHibernate extends HibernateDao<Category, Long>
     {
         if (parentId == null)
         {
-            return this.find("from Category where pid=0 order by id desc ");
+            return this.find("from Category where pid = 0 order by id desc ");
         }
         else
         {

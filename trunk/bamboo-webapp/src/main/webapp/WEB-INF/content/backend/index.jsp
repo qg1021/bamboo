@@ -11,7 +11,8 @@
 </head>
 <body>
 	<div id="wrapper"> 
-	<%@include file="/common/header.jsp" %>
+		<%@include file="/common/header.jsp" %>
+		<%@include file="/common/adminnav.jsp" %>
 		<!-- 正文内容 start -->
 		<div id="content"> 
 		    <!-- 左侧菜单 总shell start -->
@@ -19,9 +20,25 @@
 		    <!-- 左侧菜单 总shell end --> 
 		    
 			<!-- 右侧内容 start -->
-    <div class="right_shell"> 
-	
-    </div>
+    		<div class="right_shell"> 
+				<table cellSpacing=0 cellPadding=0 width="90%" align=center border=0>
+			<tr height=100>
+				<td align="center" width=100>
+					<img height="100" src="${ctx}/css/image/admin_p.gif" width="90"/></td>
+				<td width=60>&nbsp;</td>
+				<td>
+				<table height=100 cellSpacing=0 cellPadding=0 width="100%" border=0>
+					<tr>
+						<td><h2 class="stitle" align="center">欢迎进入网站后台！</h2></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td colSpan=3 height=10></td>
+			</tr>
+		</table>
+    		</div>
     <!-- 右侧内容 end --> 
 			<p class=" del_float"></p>
 		</div>

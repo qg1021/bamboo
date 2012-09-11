@@ -63,6 +63,7 @@
 <body> 
 	<div id="wrapper"> 
 		<%@include file="/common/header.jsp" %>
+		<%@include file="/common/adminnav.jsp" %>
 		<!-- 正文内容 start -->
 		<div id="content"> 
 		    <!-- 左侧菜单 总shell start -->

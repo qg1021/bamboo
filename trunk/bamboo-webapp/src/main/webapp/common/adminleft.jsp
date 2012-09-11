@@ -61,11 +61,11 @@
               <li><a id="user" href="user.action">会员管理</a></li>            
             </ul>
           </li>
-          <li class="submenu"><span class="cut" style="cursor: pointer;">基础数据</span>
+          <li class="submenu"><span class="cut" style="cursor: pointer;">业务数据</span>
             <ul>
               <li><a id="category" href="category.action">产品分类</a></li>
-              <li><a id="rdzx" href="news.action?mtype=1">热点资讯 </a></li>
-              <li><a id="hyxw" href="news.action?mtype=2">行业新闻 </a></li>
+              <li><a id="buy" href="buy.action">求购信息 </a></li>
+              <li><a id="supply" href="supply.action">供应信息 </a></li>
               <li><a id="zhbd" href="news.action?mtype=3">展会报道 </a></li>
               <li><a id="zsdt" href="news.action?mtype=4">技术动态 </a></li> 
               <li><a id="zkzy" href="news.action?mtype=5">竹库资源 </a></li>             

@@ -11,7 +11,7 @@ package com.gm.bamboo.cache;
 public class CacheKeyUtil
 {
 
-    static String        cachePerfix        = "yz_";
+    static String        cachePerfix        = "bamboo_";
 
     /** 基础数据Key **/
 
@@ -21,9 +21,13 @@ public class CacheKeyUtil
 
     public static String BusinessPrefix     = cachePerfix + "Business";
 
-    /** 求购、供应Key **/
+    /** 求购Key **/
 
     public static String BuyPrefix          = cachePerfix + "Buy";
+
+    /** 供应Key **/
+
+    public static String SupplyPrefix       = cachePerfix + "Supply";
 
     /** 平台简介、联系我们Key **/
 
@@ -40,7 +44,7 @@ public class CacheKeyUtil
     public static String NewsPrefix         = cachePerfix + "News";
 
     /** 产品分类key **/
-    public static String CategoryPrefix     = cachePerfix + "Categorys";
+    public static String CategoryPrefix     = cachePerfix + "Category";
 
     /**
      * 构建所有分类cachekey

@@ -13,6 +13,7 @@
 <link href="${ctx}/css/login.css" rel="stylesheet" type="text/css" /> 
 <link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet" />
 <script src="${ctx}/js/jquery.js" type="text/javascript"></script>
+<script src="${ctx}/js/jquery.cookie.js" type="text/javascript"></script>
 <script src="${ctx}/js/validate/jquery.validate.js" type="text/javascript"></script>
 <script src="${ctx}/js/validate/messages_cn.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -20,6 +21,7 @@ $(document).ready(function() {
 	
 	//聚焦第一个输入框
 	$("#j_username").focus();
+	initLogin();//记住用户名
 	$("#inputForm").validate({
 		rules: {
 			j_username: "required", 
@@ -44,6 +46,7 @@ $(document).ready(function() {
 });
 function onSubmit() {
 	 if($("#inputForm").valid()){
+		 doLogin();
 	 	$("#inputForm").submit();
 	 }	
 }
@@ -53,6 +56,23 @@ document.onkeydown = function(e){
 	 onSubmit();   
 	}
 };
+function doLogin()  
+{  
+	/** 实现记住密码功能 */    
+    var n = $('#j_username').val();
+    if($('#remeberme').attr('checked')){  
+        $.cookie('username', n, {expires:7});  
+    }else{  
+        $.cookie('username', null);  
+    }     
+}
+function initLogin(){
+	var n = $.cookie('username');
+    if(n!=null) {
+        $('#j_username').val(n);
+        $('#remeberme').attr('checked',"true");
+    }
+}
 </script>
 </head>
 <body>
@@ -91,13 +111,19 @@ document.onkeydown = function(e){
 	         					<span class="label02"> 密码 </span>
 	            				<input class="input" type="password" id="j_password" name="j_password"><span id="error_j_password"></span>
 	          				</li>
+	          				<li class="rememberme clearit">
+            					<label style="width:20px;">
+              						<input type="checkbox" name="remeberme" id="remeberme" onclick="doLogin();"/>
+            					</label>
+            					记住我的登录名 
+            				</li>
 	        			</ul>
 	        			<div id="buttonbox" class="btnbox m20 button01 clearl">
 	          				<input type="submit" value="登 录"/>
 	        			</div>
         			</form>
         			<div class="loign_f font_s14 ll">
-          				<p class=" ll"> <a  href="#">忘记密码？</a> </p>
+          				<p class=" ll"> <a  href="findpwd.action">忘记密码？</a> </p>
           				<p class=" rr"> - 还没有注册？<a  href="register.action"> 请注册&gt;&gt;</a></p>
         			</div>
       			</div>

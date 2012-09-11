@@ -117,15 +117,7 @@ function showLoading(){
 function hideLoading(){   
 	closeLayer();
 }
-//设置排考管理tab的css样式
-function setTabClass(currentIndex){
-	for(var i=1;i<=7;i++){
-		if(currentIndex == i)
-			$("#tab"+i).addClass("switch_tab_current");
-		else
-			$("#tab"+i).removeClass();
-	}
-}
+
 
 function pageClose(){ 
 	var browserName=navigator.appName; 
@@ -135,6 +127,22 @@ function pageClose(){
 	} else if (browserName=="Microsoft Internet Explorer") { 
 		window.opener = "whocares"; window.close(); 
 		} 
+}
+/**产品分类级联**/
+function  showTwoCat() {
+	var oneCatId = $("#oneCatid").val();
+	if(oneCatId) {
+		$.post("../related!categorys.excsec",{"parentId":oneCatId},function(data) {
+			$("#twoCatid option[value!='']").remove();
+			var category = eval(data);
+			if(category.length == 0) return;
+			for(var i = 0 ;i < category.length ; i++) {
+				$("#twoCatid").append("<option value='"+category[i].value+"'>"+category[i].label+"</option>");
+			} 
+		});
+	}else {
+		$("#twoCatId option[value!='']").remove(); 
+	}
 }
 
 

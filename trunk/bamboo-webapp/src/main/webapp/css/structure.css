@@ -659,7 +659,7 @@ html {color: #333;font: 12px Tahoma,Arial, sans-serif;background-color:white;}
 
 /*忘记密码*/
 .getpw {margin: 70px auto; width: 50%; font-size:14px;}
-.getpw .name{ color:#0094ff; line-height:40px;}
+.getpw .name{ color:#0D9C04; line-height:40px;}
 .getpw ul li{ height:40px; line-height:40px;}
 .getpw label{ width:100px; display:inline-block;}
 
@@ -697,10 +697,13 @@ html {color: #333;font: 12px Tahoma,Arial, sans-serif;background-color:white;}
 
 .box_search {
     background: none repeat scroll 0 0 #F5F5F5;
-    border: 1px solid #0D9C04;
+    border: 1px solid #DBDADA;
     margin-bottom: 10px;
     overflow: hidden;
     padding: 5px 10px;
+}
+.box_search li {
+    padding: 4px 0;
 }
 .form {
     margin-bottom: 10px;
@@ -710,7 +713,7 @@ html {color: #333;font: 12px Tahoma,Arial, sans-serif;background-color:white;}
 }
 .form li label {
     display: inline-block;
-    width: 80px;
+    width: 100px;
 }
 .form li b {
     color: red;

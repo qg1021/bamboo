@@ -89,6 +89,8 @@ public class Global
 
     public static List<LabelValue> BASEDATA_TYPES   = Lists.newArrayList();
 
+    public final static String     DEAULT_NO_IMAGE  = "null.gif";
+
     public static String           picpath;
 
     public static List<LabelValue> newsTypeList     = Lists.newArrayList();

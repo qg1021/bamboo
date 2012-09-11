@@ -21,7 +21,7 @@ import org.hibernate.annotations.NotFoundAction;
  * @since 2012-8-29
  */
 @Entity
-@Table(name = "category")
+@Table(name = "t_category")
 // 默认的缓存策略
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Category extends BaseEntity
