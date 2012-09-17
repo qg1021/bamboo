@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<%@ include file="/common/meta.jsp" %>
-	<title>中国竹木工艺网(www.bamboo-crafts.cn)-${typeName.label}</title>
+	<title>中国竹木工艺网(www.crafts-bamboo.com)-${typeName.label}</title>
 	<meta content="${typeName.value}" name="activemenu" />
 	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
 	<link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet"/>
@@ -45,7 +45,7 @@
 	});
 	var htmlEditor = null;
 	KindEditor.ready(function(K) {
-		htmlEditor = K.create('textarea[name=content]', {
+		htmlEditor = K.create('textarea[name=desciption]', {
 			cssPath : '${ctx}/KindEditor/themes/default/default.css',
 			uploadJson : '${ctx}/KindEditor/jsp/upload_json.jsp',
 			fileManagerJson : '${ctx}/KindEditor/jsp/file_manager_json.jsp',
@@ -55,7 +55,7 @@
 	function onSubmit() {
 		 if($("#inputForm").valid()){
 		 if(!htmlEditor.isEmpty()){
-		 	$("#content").val(htmlEditor.html());
+		 	$("#desciption").val(htmlEditor.html());
 		 	$("#inputForm").submit();
 		 }	else{
 		 	alert("内容不能为空");
@@ -110,8 +110,8 @@
 				  		</li>
 				  		<li >
 				  			<label style="vertical-align: top;">内容</label>
-				  			<textarea id="content" name="content" cols="100" rows="8" style="width:750px;height:270px;visibility:hidden;">${content}</textarea>
-		        			<span id="error_content"></span>
+				  			<textarea id="desciption" name="desciption" cols="100" rows="8" style="width:750px;height:270px;visibility:hidden;">${desciption}</textarea>
+		        			<span id="error_desciption"></span>
 				  		</li>
 					</ul>    
 	 				<p class="button_box">

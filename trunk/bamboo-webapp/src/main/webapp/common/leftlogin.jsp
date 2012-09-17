@@ -3,10 +3,10 @@
 <%@ include file="/common/taglibs.jsp" %>
 <div class="indexlogin rr">
 	<div class="indexlogin_btn">
-		<a class="btn1" target="_blank" href="member/offer.jsp">发布招商信息</a>
-		<a class="btn1" target="_blank" href="member/offer.jsp">发布代理信息</a>
-		<a class="btn1" target="_blank" href="member/offer.jsp">发布供应信息</a>
-		<a class="btn1" target="_blank" href="member/offer.jsp">发布求购信息</a>	
+		<a class="btn1" href="${ctx}/user/business.action">发布招商信息</a>
+		<a class="btn1"  href="${ctx}/user/company.action">发布企业信息</a>
+		<a class="btn1"  href="${ctx}/user/supply.action">发布供应信息</a>
+		<a class="btn1"  href="${ctx}/user/buy.action">发布求购信息</a>	
 		<%if(SpringSecurityUtils.getCurrentUserName().equals("anonymousUser")){ %>
 			<a class="btn2" target="_blank" href="register.action">马上免费注册会员</a>
 		<%}else{ %>

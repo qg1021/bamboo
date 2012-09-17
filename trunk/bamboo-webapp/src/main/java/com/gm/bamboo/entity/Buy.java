@@ -74,6 +74,8 @@ public class Buy extends BaseEntity
 
     private String            picurl;               // 配图路径
 
+    private long              uid;                  // 用户id
+
     public String getPicurl()
     {
         return picurl;
@@ -122,6 +124,17 @@ public class Buy extends BaseEntity
     public void setUser(User user)
     {
         this.user = user;
+        this.uid = user.getId();
+    }
+
+    public long getUid()
+    {
+        return uid;
+    }
+
+    public void setUid(long uid)
+    {
+        this.uid = uid;
     }
 
     public Category getCategory()

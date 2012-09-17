@@ -40,7 +40,7 @@
          
      }
 </script>
-<div id="pager"  class="pagernumber rr"></div>
+<div id="pager"  class="pagernumber"></div>
 <input type="hidden" name="page.pageNo" id="pageNo" value="${page.pageNo}"/>
 <input type="hidden" name="page.orderBy" id="orderBy" value="${page.orderBy}"/>
 <input type="hidden" name="page.order" id="order" value="${page.order}"/>

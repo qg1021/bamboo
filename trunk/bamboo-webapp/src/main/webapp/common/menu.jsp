@@ -16,23 +16,20 @@
 	<li id="index" class="fff">
 		<a href="${ctx}/index.action">首页</a>
 	</li>
-	<li class="fff">
-	<a href="index_1.html">供应</a>
+	<li id="indexsupply" class="fff">
+	<a  href="indexsupply.action">供应中心</a>
 	</li>
-	<li class="fff">
-	<a href="index_8.html">求购</a>
+	<li id="indexbuy" class="fff">
+	<a  href="indexbuy.action">求购中心</a>
 	</li>
-	<li class="fff">
-	<a href="index_4.html">招商</a>
+	<li id="indexbusiness" class="fff">
+	<a  href="indexbusiness.action">品牌招商</a>
 	</li>
-	<li class="fff">
-	<a href="index_7.html">资讯</a>
+	<li id="indexnews" class="fff">
+	<a  href="indexnews.action">行情资讯</a>
 	</li>
-	<li class="fff">
-		<a href="index_10.html">行情</a>
-	</li>
-	<li class="fff">
-	<a href="index_4.html">品牌</a>
+	<li id="indexcompany" class="fff">
+		<a href="indexcompany.action">企业信息</a>
 	</li>
 	</ul>
 </div>

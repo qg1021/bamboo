@@ -126,6 +126,7 @@ public class BuyAction extends CrudActionSupport<Buy>
         {
             filters.add(new PropertyFilter("EQL_twocat", twoCatid));
         }
+
         if (!page.isOrderBySetted())
         {
             page.setOrderBy("id");

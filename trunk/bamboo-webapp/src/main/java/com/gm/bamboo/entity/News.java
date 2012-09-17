@@ -9,6 +9,8 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import com.gm.bamboo.contant.Global;
+
 /**
  * 
  * 新闻焦点、热点资讯
@@ -38,17 +40,27 @@ public class News extends BaseEntity
 
     private Date              publishdate;          // 发布时间
 
-    private String            content;              // 内容
+    private String            desciption;
 
-    private String            link;                 // 链接
+    public String getDesciption()
+    {
+        return desciption;
+    }
 
-    private long              viewcount;            // 浏览次数
+    public void setDesciption(String desciption)
+    {
+        this.desciption = desciption;
+    }
 
-    private int               type;                 // 0：新闻焦点 1：热点资讯
+    private String          link;      // 链接
 
-    public final static int   TYPE_0           = 0;
+    private long            viewcount; // 浏览次数
 
-    public final static int   TYPE_1           = 1;
+    private int             type;      // 0：新闻焦点 1：热点资讯
+
+    public final static int TYPE_0 = 0;
+
+    public final static int TYPE_1 = 1;
 
     public long getViewcount()
     {
@@ -70,6 +82,12 @@ public class News extends BaseEntity
         return "未发布";
     }
 
+    @Transient
+    public String getMenuName()
+    {
+        return Global.newsTypeList.get(type).getLabel();
+    }
+
     public String getSource()
     {
         return source;
@@ -78,16 +96,6 @@ public class News extends BaseEntity
     public void setSource(String source)
     {
         this.source = source;
-    }
-
-    public String getContent()
-    {
-        return content;
-    }
-
-    public void setContent(String content)
-    {
-        this.content = content;
     }
 
     public String getLink()

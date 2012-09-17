@@ -51,9 +51,9 @@
 			|<span><a target="_blank" href="/sitemap.html">网站地图</a></span>
 		</div>
 		<div class="ta_c">
-			<p class="mb5">版权 © 2002-2012  中国竹木工艺网  （<a target="_blank" href="http://www.crafts-bamboo.com">crafts-bamboo.com</a>）所有,  保留所有权利</p>
+			<p class="mb5">版权 ©2012  中国竹木工艺网  （<a target="_blank" href="http://www.crafts-bamboo.com">crafts-bamboo.com</a>）所有,  保留所有权利</p>
 			<p class="mb5">
-				<a target="_blank" href="http://net.china.com.cn/index.htm"><img src="${ctx}//css/image/report.gif"></a>&nbsp;&nbsp;
+				<a target="_blank" href="http://net.china.com.cn/index.htm"><img src="${ctx}/css/image/report.gif"></a>&nbsp;&nbsp;
 				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="${ctx}/css/image/110.gif"></a>&nbsp;&nbsp;
 				<a target="_blank" href="http://www.pingpinganan.gov.cn/web/index.aspx"><img src="${ctx}/css/image/ppaa.gif"></a>&nbsp;&nbsp;
 			</p>

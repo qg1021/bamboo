@@ -30,14 +30,14 @@ ul, ol {
 	margin: 0;
 }
 .l_col{
-	width:695px;
+	width:710px;
 	float:left;
-	margin-right: 20px;
+	margin-right: 5px;
 	margin-bottom:10px;
 	}
 
 .r_col {
-	width: 240px;
+	width: 245px;
 	float:right;
 }
 .title {

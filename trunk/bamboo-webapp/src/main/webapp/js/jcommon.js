@@ -19,7 +19,7 @@ function delRecord(url){
 /**上传个人照片**/
 function ajaxUploadPic(fileurl){
 	
-	showLayer('dialog','dialog_content',"<span style='text-align:center'><img align='top' alt='正在上传...' src='../image/loading.gif'/></span>");
+	showLayer('dialog','dialog_content',"<img align='top' alt='正在上传...' src='../image/loading.gif'/>");
 	
 	$.ajaxFileUpload
 	(

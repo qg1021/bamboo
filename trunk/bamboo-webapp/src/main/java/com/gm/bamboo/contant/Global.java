@@ -95,11 +95,18 @@ public class Global
 
     public static List<LabelValue> newsTypeList     = Lists.newArrayList();
 
+    public static List<LabelValue> advertTypeList   = Lists.newArrayList();
+
+    public static List<LabelValue> linksTypeList    = Lists.newArrayList();
+
+    public static String           appurl;
+
     static
     {
         BASEDATA_TYPES.add(new LabelValue("0", "学历"));
         BASEDATA_TYPES.add(new LabelValue("1", "类别"));
         picpath = PropertyUtils.getProperty("upload.path");
+        appurl = PropertyUtils.getProperty("bamboo.appurl");
         /** 行情资讯分类 **/
         newsTypeList.add(new LabelValue("zcfg", "政策法规"));// ----0
         newsTypeList.add(new LabelValue("rdzx", "热点资讯"));// ----1
@@ -107,6 +114,15 @@ public class Global
         newsTypeList.add(new LabelValue("zhbd", "展会报道"));// ----3
         newsTypeList.add(new LabelValue("zsdt", "技术动态"));// ----4
         newsTypeList.add(new LabelValue("zkzy", "竹库资源"));// ----5
+
+        advertTypeList.add(new LabelValue("indexleft", "首页悬浮左边广告"));// ----0
+        advertTypeList.add(new LabelValue("indexright", "首页悬浮右边广告"));// ----1
+        advertTypeList.add(new LabelValue("indexhead", "首页头部切换广告"));// ----2
+        advertTypeList.add(new LabelValue("indexcenter", "首页中间广告"));// ----3
+        advertTypeList.add(new LabelValue("hangye", "行业资讯首页广告"));// ----4
+        advertTypeList.add(new LabelValue("rightpage", "右边随机广告位"));// ----5
+
+        linksTypeList.add(new LabelValue("indexlinks", "首页友情链接"));// ----0
 
     }
 

@@ -22,99 +22,7 @@
 	</div>
 	<div id="content">
 		<div class="shell01">
-			<!-- 产品分类  start -->
-			<div class="index_category">
-				<p><img src="css/image/category_head.png"/></p>
-				<div class="category_bk">
-					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="css/image/more.png"/></a> 竹工艺品 </p>
-					<ul>
-						<li><a href="#">编织工艺</a></li>
-						<li><a href="#">雕刻工艺</a></li>
-						<li><a href="#">竹根工艺</a></li>
-						<li><a href="#">其他竹工艺</a></li>
-						<li><a href="#">竹筒日品类</a></li>
-						<li><a href="#">根雕</a></li>
-					</ul>
-					<p class="clearb"></p>
-					<p class="category_title"><a class="rr mt5" href="#"><img src="css/image/more.png"/></a> 竹家具 </p>
-					<ul>
-						<li><a href="#">原竹家具</a></li>
-						<li><a href="#">板式家具</a></li>
-						<li><a href="#">竹藤家具</a></li>
-						<li><a href="#">餐厅家具</a></li>
-						<li><a href="#">客厅家具</a></li>
-						<li><a href="#">书房家具</a></li>
-					</ul>
-					<p class="clearb"></p>
-					<p class="category_title">
-					<a class="rr mt5" href="#"><img src="css/image/more.png"/></a> 竹地板</p>
-					<ul>
-						<li><a href="#">本色地板</a></li>
-						<li><a href="#">碳化地板</a></li>
-						<li><a href="#">竹丝板</a></li>
-						<li><a href="#">拼化地板</a></li>
-						<li><a href="#">贴面地板</a></li>
-					</ul>
-					<p class="clearb"></p>
-					<p class="category_title">
-					<a class="rr mt5" href="#"><img src="css/image/more.png"/></a>竹纤维</p>
-					<ul>
-						<li><a href="#">卫浴系列</a></li>
-						<li><a href="#">服饰系列</a></li>
-						<li><a href="#">日用品</a></li>
-						<li><a href="#">婴童系列</a></li>
-						<li><a href="#">家纺系列</a></li>
-						<li><a href="#">竹纤维礼品</a></li>
-					</ul>
-					<p class="clearb"></p>  
-					  
-					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="css/image/more.png"/></a>竹窗帘</p>
-					<ul>
-						<li><a href="#">竹编织窗帘</a></li>
-						<li><a href="#">百叶窗</a></li>
-						<li><a href="#">门帘</a></li>
-						<li><a href="#">落地帘</a></li>
-						<li><a href="#">彩色窗帘</a></li>
-						<li><a href="#">印花窗帘</a></li>
-					</ul>
-					<p class="clearb"></p>  
-					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="css/image/more.png"/></a>竹板材</p>
-					<ul>
-						<li><a href="#">家具板</a></li>
-						<li><a href="#">楼梯板</a></li>
-						<li><a href="#">门面板</a></li>
-						<li><a href="#">包装板</a></li>
-						<li><a href="#">贴面板</a></li>
-						<li><a href="#">竹刨切板</a></li>
-					</ul>
-					<p class="clearb"></p>  
-					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="image/more.png"/></a>竹垫</p>
-					<ul>
-						<li><a href="#">沙发坐垫</a></li>
-						<li><a href="#">汽车坐垫</a></li>
-						<li><a href="#">竹地毯</a></li>
-						<li><a href="#">门垫</a></li>
-						<li><a href="#">保健枕</a></li>
-						<li><a href="#">麻将坐垫</a></li>
-					</ul>
-					<p class="clearb"></p>  
-					<p class="category_title"><a class="rr mt5" href="#">
-					<img src="css/image/more.png"/></a>竹炭</p>
-					<ul>
-						<li><a href="#">原炭</a></li>
-						<li><a href="#">竹炭包</a></li>
-						<li><a href="#">空气净化炭</a></li>
-						<li><a href="#">竹醋液</a></li>
-						<li><a href="#">床上用品</a></li>
-						<li><a href="#">保健用品</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- 产品分类  end -->
+			<c:import url="${appurl}/category.action"/>
 			<!-- focus  start -->
 			<div class="index_focus_box">
 				<div class="index_focus">
@@ -264,43 +172,13 @@
 		<p class="clearb"></p>
 	
 			<div style="margin-right:9px;" class="index_news_2box ll">
-				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"/></a> 政策法规</p>
-					<ul>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-					</ul> 
-				</div>
+				<c:import url="${appurl}/indexnews!part.action?mtype=0&psize=8"/>
 			</div>
 			<div style="margin-right:9px;" class="index_news_2box">
-				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"/></a>热点资讯</p>
-					<ul>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-					</ul> 
-				</div>
+				<c:import url="${appurl}/indexnews!part.action?mtype=1&psize=8"/>
 			</div>
 			<div  class="index_news_2box">
-				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"/></a>行业新闻</p>
-					<ul>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-					</ul> 
-				</div>
+				<c:import url="${appurl}/indexnews!part.action?mtype=2&psize=8"/>
 			</div>
 			<div  class="easyui-tabs rr" style="width:960px;margin-top:-8px;">  
 					<div title="产品展示" class="index_left">  
@@ -335,53 +213,18 @@
 					</div> 
 			</div>
 			<div style="margin-right:9px;" class="index_news_2box ll">
-				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"/></a> 展会报道</p>
-					<ul>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-					</ul> 
-				</div>
+				<c:import url="${appurl}/indexnews!part.action?mtype=3&psize=8"/>
 			</div>
 			<div style="margin-right:9px;" class="index_news_2box">
-				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"/></a>技术动态</p>
-					<ul>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-					</ul> 
-				</div>
+				<c:import url="${appurl}/indexnews!part.action?mtype=4&psize=8"/>
 			</div>
 			<div  class="index_news_2box">
-				<div  class="rightmenu">
-					<p class="category_header mb5"><a class="rr mt5" href="#"><img src="css/image/more.png"/></a>竹库资源</p>
-					<ul>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-						<li><a title="竹产业发展背后的巨大力量" href="http://www.zgzymh.net/news/12821479.html" target="_blank"> 竹产业发展背后的巨大力量 </a></li>
-						<li><a href="#">大做竹文化文章 开展竹文化旅游</a></li>
-						<li><a href="#">赤水市大兴竹文化旅游</a></li>
-					</ul> 
-				</div>
+				<c:import url="${appurl}/indexnews!part.action?mtype=5&psize=8"/>
 			</div>
 	</div>
 	<p class="clearb" ></p>
 	<div class="ta_c" ><img style="margin-top:-8px;" src="demo/vip.gif" width="960"/></div>
-
-	<div  class="easyui-tabs" style="width:960px;margin-top:5px;">  
-		<div title="友情链接" class="friendlink ">  
-			-<span><a target="_blank" href="http://www.bambooall.com">傲竹尚品</a></span>-<span><a target="_blank" href="http://www.icbr.ac.cn">国际竹藤网</a></span>-<span><a target="_blank" href="http://www.forestry.gov.cn">国家林业局政府网</a></span>-<span><a target="_blank" href="http://www.forestrysci.gov.cn">中国林业科技网</a></span>-<span><a target="_blank" href="http://www.lknet.ac.cn">中国林业信息网</a></span>-<span><a target="_blank" href="http://www.chinabamboonet.com">中国竹网</a></span>-<span><a target="_blank" href="http://www.chinagreen.net.cn">中国绿化网</a></span>-<span><a target="_blank" href="http://www.china-flower.com/">中国花卉网</a></span>-<span><a target="_blank" href="http://www.21food.cn/">中国食品商务网</a></span>-<span><a target="_blank" href="http://china.machine365.com/">中华机械网</a></span>-<span><a target="_blank" href="http://china.chemnet.com/">中国化工网</a></span>-<span><a target="_blank" href="http://www.charcoal.org.cn/">中国竹炭信息网</a></span>-<span><a target="_blank" href="http://www.cncraftinfo.com/">中国工艺品网</a></span>-<span><a target="_blank" href="http://www.ajol.cn">中国竹乡安吉在线</a></span>-<span><a target="_blank" href="http://www.fgr.cn/">中国森林植物种质资源</a></span>-<span><a target="_blank" href="http://sxzy.home.bj001.net/">沙县竹业网</a></span>-<span><a target="_blank" href="http://www.gnbamboo.com/qiye.htm">广宁竹子网</a></span>-<span><a target="_blank" href="http://www.chinesebamboo.net">中国竹子网</a></span>-<span><a target="_blank" href="http://www.gzbamboo.net">广东园林观赏竹子网</a></span>-<span><a target="_blank" href="http://www.wickerchina.cn/">中国编织工艺品门户</a></span>-<span><a target="_blank" href="http://www.dragon-guide.net">外贸网址之家</a></span>-<span><a target="_blank" href="http://www.bamboosea.net/">蜀南竹海</a></span>-<span><a target="_blank" href="http://www.ytjj360.com">亚太家具网</a></span>-<span><a target="_blank" href="http://www.cnbamboohome.com">竹家具</a></span>-<span><a target="_blank" href="http://www.shoppingju.com">装修材料</a></span>
-		</div> 
-	</div>
+	<c:import url="${appurl}/links.action"/>
 	<%@include file="/common/footer.jsp" %>
 	</div>
 </div>

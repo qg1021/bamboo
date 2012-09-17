@@ -30,6 +30,6 @@
 		</ul>
 	<%}%>
 </span>
-<a>设为首页</a> | <a>加入收藏</a> | <a>广告推广</a>
+<a style="outline:none;blr:expression(this.onFocus=this.blur())" onclick="javascript:setHomepage('http://www.crafts-bamboo.com/');">设为首页</a> | <a href="javascript:void(0);" onclick="addFavor('http://www.crafts-bamboo.com/', '中国竹木工艺网')" style="outline:none;blr:expression(this.onFocus=this.blur())">加入收藏</a> | <a>广告推广</a>
 </div>
 </div>

@@ -46,6 +46,12 @@ public class CacheKeyUtil
     /** 产品分类key **/
     public static String CategoryPrefix     = cachePerfix + "Category";
 
+    /** 广告位key **/
+    public static String AdvertPrefix       = cachePerfix + "Advert";
+
+    /** 企业信息key **/
+    public static String CompanyPrefix      = cachePerfix + "Company";
+
     /**
      * 构建所有分类cachekey
      * 
@@ -63,9 +69,19 @@ public class CacheKeyUtil
         }
     }
 
+    public static String buildCompanyKey(int type)
+    {
+        return CompanyPrefix + "_" + type;
+    }
+
     public static String buildNewsKey(int type)
     {
         return NewsPrefix + "_" + type;
+    }
+
+    public static String buildAdvertKey(int type)
+    {
+        return AdvertPrefix + "_" + type;
     }
 
     public static String buildLocalfeelingKey(int type)

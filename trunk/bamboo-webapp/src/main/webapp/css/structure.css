@@ -186,7 +186,7 @@ html {color: #333;font: 12px Tahoma,Arial, sans-serif;background-color:white;}
 	}
 /* 左侧菜单 css*/
 
-.leftmenu_shell { width:160px; background-color:#E1FBE0; padding:16px; border-radius:5px; border:1px solid #0D9C04; overflow: hidden; float:left}
+.leftmenu_shell { width:160px;height:600px;background-color:#E1FBE0; padding:16px; border-radius:5px; border:1px solid #0D9C04; overflow: hidden; float:left}
 .leftmenu_box { width:160px;background-color:#fff; border-radius:5px; border:1px solid #e3e4df; margin-bottom:16px;}
 .leftmenu_title { border-bottom:1px solid #0D9C04; padding:8px 16px; font-size:15px; font-weight:bold; font-family:微软雅黑; color:#4c8500;}
 .leftmenu_title img { vertical-align: middle; margin-right:8px;}

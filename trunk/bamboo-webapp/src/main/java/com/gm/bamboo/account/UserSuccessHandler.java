@@ -63,6 +63,7 @@ public class UserSuccessHandler extends SimpleUrlAuthenticationSuccessHandler
             user.setLastLoginDate(new Date());// 记录最后登录时间
             user.setLoginTimes(user.getLoginTimes() + 1);// 记录登录次数
             userManager.save(user);
+            request.getSession().setAttribute("loginuser", user);
             request.getSession().setAttribute("userid", user.getId());
         }
         if (!userDetails.getAuthorities().isEmpty()

@@ -82,6 +82,18 @@ public class Supply extends BaseEntity
 
     private long              twocat;               // 二级分类id
 
+    private long              uid;                  // 用户id
+
+    public long getUid()
+    {
+        return uid;
+    }
+
+    public void setUid(long uid)
+    {
+        this.uid = uid;
+    }
+
     public long getOnecat()
     {
         return onecat;
@@ -133,6 +145,7 @@ public class Supply extends BaseEntity
     public void setUser(User user)
     {
         this.user = user;
+        this.uid = user.getId();
     }
 
     public Category getCategory()

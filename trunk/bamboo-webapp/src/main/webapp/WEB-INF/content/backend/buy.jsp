@@ -27,7 +27,7 @@
 		}
 
 		if(confirm("确认删除？")){
-			$("#mainForm").attr("action","buy!batchDelete.action?mtype=${mtype}").submit();
+			$("#mainForm").attr("action","buy!batchDelete.action").submit();
 		}
 	}
 	function onPublish(){
@@ -88,11 +88,11 @@
 								</span>
 		                     	<span>
 									<label class="ml20">一级分类</label>
-		                     	 	<s:select list="oneCatList" onclick="showTwoCat();"  id="oneCatid" name="oneCatid"  listKey="id" listValue="name"  value="#parameters.oneCatid" cssStyle="width:120px;" headerKey="" headerValue="--全 部--"/> 
+		                     	 	<s:select list="oneCatList" onclick="showTwoCat();"  id="oneCatid" name="oneCatid"  listKey="id" listValue="name"  value="oneCatid" cssStyle="width:120px;" headerKey="" headerValue="--全 部--"/> 
 		                     	</span>
 		                     	<span>
 									<label class="ml20">二级分类</label>
-		                     	 	<s:select list="twoCatList"  id="twoCatid" name="twoCatid"  listKey="id" listValue="name"  value="#parameters.twoCatid" cssStyle="width:120px;" headerKey="" headerValue="--全 部--"/> 
+		                     	 	<s:select list="twoCatList"  id="twoCatid" name="twoCatid"  listKey="id" listValue="name"  value="twoCatid" cssStyle="width:120px;" headerKey="" headerValue="--全 部--"/> 
 		                     	</span>
 							</li>
 							<li>

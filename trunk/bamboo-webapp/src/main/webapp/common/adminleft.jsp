@@ -66,9 +66,23 @@
               <li><a id="category" href="category.action">产品分类</a></li>
               <li><a id="buy" href="buy.action">求购信息 </a></li>
               <li><a id="supply" href="supply.action">供应信息 </a></li>
-              <li><a id="zhbd" href="news.action?mtype=3">展会报道 </a></li>
-              <li><a id="zsdt" href="news.action?mtype=4">技术动态 </a></li> 
-              <li><a id="zkzy" href="news.action?mtype=5">竹库资源 </a></li>             
+              <li><a id="company" href="company.action">企业信息 </a></li>	
+              <li><a id="business" href="business.action">招商信息 </a></li>             
+            </ul>
+          </li>
+          <li class="submenu"><span class="cut" style="cursor: pointer;">广告位</span>
+            <ul>
+              <li><a id="indexleft" href="advert.action?mtype=0">首页悬浮左边广告</a></li>
+              <li><a id="indexright" href="advert.action?mtype=1">首页悬浮右边广告 </a></li>
+              <li><a id="indexhead" href="advert.action?mtype=2">首页头部切换广告 </a></li>
+              <li><a id="indexcenter" href="advert.action?mtype=3">首页中间广告</a></li>
+              <li><a id="hangye" href="advert.action?mtype=4">行业资讯首页广告 </a></li> 
+              <li><a id="rightpage" href="advert.action?mtype=5">右边随机广告位 </a></li>             
+            </ul>
+          </li>
+          <li class="submenu"><span class="cut" style="cursor: pointer;">友情链接</span>
+            <ul>
+              <li><a id="indexlinks" href="links.action?mtype=0">首页底部链接</a></li>           
             </ul>
           </li>
                  

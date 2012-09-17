@@ -30,14 +30,14 @@ ul, ol {
 	margin: 0;
 }
 .l_col{
-	width:695px;
+	width:710px;
 	float:left;
-	margin-right: 20px;
+	margin-right: 5px;
 	margin-bottom:10px;
 	}
 
 .r_col {
-	width: 240px;
+	width: 245px;
 	float:right;
 }
 .title {
@@ -93,7 +93,6 @@ ul, ol {
 .imagelist ul li {
     border-bottom: 1px dotted #0D9C04;
     height: 76px;
-    line-height: 76px;
     overflow: hidden;
     width: 695px;
 }
@@ -109,7 +108,7 @@ ul, ol {
 .detailbox {
     border: 1px solid #0D9C04;
     min-height: 355px;
-    padding: 10px 15px;
+    padding: 10px 10px;
 }
 
 .news_h {
@@ -787,3 +786,16 @@ element.style {
     min-height: 400px;
     padding: 10px 30px;
 }
+.detailform {
+}
+.detailform li {
+    padding: 2px 0;
+}
+.detailform li label {
+    display: inline-block;
+    width: 80px;
+}
+.detailform li b {
+    color: red;
+}
+

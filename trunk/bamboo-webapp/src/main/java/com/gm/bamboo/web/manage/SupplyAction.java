@@ -38,6 +38,7 @@ import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springside.modules.orm.Page;
 import org.springside.modules.orm.PropertyFilter;
+import org.springside.modules.security.springsecurity.SpringSecurityUtils;
 import org.springside.modules.utils.web.struts2.Struts2Utils;
 
 import cn.common.lib.springside.util.ParamPropertyUtils;
@@ -46,6 +47,7 @@ import cn.common.lib.springside.web.CrudActionSupport;
 import com.gm.bamboo.contant.Global;
 import com.gm.bamboo.core.CategoryManager;
 import com.gm.bamboo.core.SupplyManager;
+import com.gm.bamboo.core.UserManager;
 import com.gm.bamboo.entity.Category;
 import com.gm.bamboo.entity.Supply;
 import com.google.common.collect.Lists;
@@ -77,6 +79,9 @@ public class SupplyAction extends CrudActionSupport<Supply>
 
     @Autowired
     private SupplyManager     supplyManager;
+
+    @Autowired
+    private UserManager       userManager;
 
     @Autowired
     private CategoryManager   categoryManager;
@@ -147,7 +152,10 @@ public class SupplyAction extends CrudActionSupport<Supply>
         else
         {
             supply = new Supply();
+            supply.setIspublish(false);
             supply.setCreatedate(new Date());
+            supply.setUser(userManager.getUserByUsername(SpringSecurityUtils
+                    .getCurrentUserName()));
         }
 
     }
@@ -164,21 +172,23 @@ public class SupplyAction extends CrudActionSupport<Supply>
 
         try
         {
-            HttpServletRequest request = Struts2Utils.getRequest();
-            String oneCatId = request.getParameter("oneCatId");
-            String twoCatId = request.getParameter("twoCatId");
-            supply.setOnecat(Long.parseLong(oneCatId));
-            if (StringUtils.isNotBlank(twoCatId))
+            supply.setOnecat(Long.parseLong(oneCatid));
+            if (StringUtils.isNotBlank(twoCatid))
             {
-                supply.setTwocat(Long.parseLong(twoCatId));
+                supply.setTwocat(Long.parseLong(twoCatid));
                 supply.setCategory(categoryManager
-                        .get(Long.parseLong(twoCatId)));
+                        .get(Long.parseLong(twoCatid)));
             }
             else
             {
                 supply.setCategory(categoryManager
-                        .get(Long.parseLong(oneCatId)));
+                        .get(Long.parseLong(oneCatid)));
             }
+            if (StringUtils.isBlank(supply.getPicurl()))
+            {
+                supply.setPicurl(Global.DEAULT_NO_IMAGE);
+            }
+            supplyManager.save(supply);
             super.addActionMessage(Global.SAVE_SUCCESS);
         }
         catch (Exception e)
@@ -319,6 +329,11 @@ public class SupplyAction extends CrudActionSupport<Supply>
     public void setOneCatid(String oneCatid)
     {
         this.oneCatid = oneCatid;
+    }
+
+    public void setTwoCatid(String twoCatid)
+    {
+        this.twoCatid = twoCatid;
     }
 
     public List<Category> getOneCatList()

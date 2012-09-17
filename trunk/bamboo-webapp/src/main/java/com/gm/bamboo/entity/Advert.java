@@ -1,0 +1,111 @@
+package com.gm.bamboo.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+/**
+ * 
+ * 广告位
+ * 
+ * @author qingang
+ * @version 1.0
+ * @since 2012-7-24
+ */
+@Entity
+@Table(name = "t_advert")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+public class Advert extends BaseEntity
+{
+
+    /**
+     * serialVersionUID long
+     */
+    private static final long serialVersionUID = 1L;
+
+    private String            title;
+
+    private int               type;
+
+    private String            picurl;
+
+    private String            remark;
+
+    private boolean           ispublic;
+
+    @Transient
+    public String getStatusName()
+    {
+        if (ispublic)
+        {
+            return "已发布";
+        }
+        return "未发布";
+    }
+
+    public boolean isIspublic()
+    {
+        return ispublic;
+    }
+
+    public void setIspublic(boolean ispublic)
+    {
+        this.ispublic = ispublic;
+    }
+
+    public String getTitle()
+    {
+        return title;
+    }
+
+    public void setTitle(String title)
+    {
+        this.title = title;
+    }
+
+    public int getType()
+    {
+        return type;
+    }
+
+    public void setType(int type)
+    {
+        this.type = type;
+    }
+
+    public String getPicurl()
+    {
+        return picurl;
+    }
+
+    public void setPicurl(String picurl)
+    {
+        this.picurl = picurl;
+    }
+
+    public String getRemark()
+    {
+        return remark;
+    }
+
+    public void setRemark(String remark)
+    {
+        this.remark = remark;
+    }
+
+    public String getLinkurl()
+    {
+        return linkurl;
+    }
+
+    public void setLinkurl(String linkurl)
+    {
+        this.linkurl = linkurl;
+    }
+
+    private String linkurl;
+
+}
