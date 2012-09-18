@@ -177,6 +177,7 @@ public class AdvertAction extends CrudActionSupport<Advert>
         else
         {
             entity = new Advert();
+            entity.setType(mtype);
         }
 
     }

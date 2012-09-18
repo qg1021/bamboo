@@ -42,6 +42,7 @@ import cn.common.lib.springside.web.CrudActionSupport;
 
 import com.gm.bamboo.core.BuyManager;
 import com.gm.bamboo.entity.Buy;
+import com.google.common.collect.Lists;
 
 /**
  * 首页求购信息
@@ -69,6 +70,18 @@ public class IndexbuyAction extends CrudActionSupport<Buy>
 
     @Autowired
     private BuyManager        buyManager;
+
+    private List<Buy>         buyList          = Lists.newArrayList();
+
+    public List<Buy> getBuyList()
+    {
+        return buyList;
+    }
+
+    public void setBuyList(List<Buy> buyList)
+    {
+        this.buyList = buyList;
+    }
 
     /**
      * {@inheritDoc}
@@ -108,6 +121,12 @@ public class IndexbuyAction extends CrudActionSupport<Buy>
         }
         page = buyManager.search(page, filters);
         return SUCCESS;
+    }
+
+    public String part() throws Exception
+    {
+        buyList = buyManager.search(13);
+        return "part";
     }
 
     public String search() throws Exception

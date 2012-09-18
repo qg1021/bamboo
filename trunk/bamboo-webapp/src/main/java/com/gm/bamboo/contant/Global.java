@@ -119,10 +119,13 @@ public class Global
         advertTypeList.add(new LabelValue("indexright", "首页悬浮右边广告"));// ----1
         advertTypeList.add(new LabelValue("indexhead", "首页头部切换广告"));// ----2
         advertTypeList.add(new LabelValue("indexcenter", "首页中间广告"));// ----3
-        advertTypeList.add(new LabelValue("hangye", "行业资讯首页广告"));// ----4
+        advertTypeList.add(new LabelValue("indexc2", "首页资讯中间广告"));// ----4
         advertTypeList.add(new LabelValue("rightpage", "右边随机广告位"));// ----5
 
         linksTypeList.add(new LabelValue("indexlinks", "首页友情链接"));// ----0
+        linksTypeList.add(new LabelValue("aboutus", "关于我们"));// ----1
+        linksTypeList.add(new LabelValue("contactus", "联系我们"));// ----2
+        linksTypeList.add(new LabelValue("adextend", "广告推广"));// ----3
 
     }
 

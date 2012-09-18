@@ -149,6 +149,11 @@ public class LinksManager extends CacheEntityManager<Links, Long>
         if (object == null)
         {// get from db
             Page<Links> page = new Page<Links>(pagesize);
+            if (!page.isOrderBySetted())
+            {
+                page.setOrderBy("id");
+                page.setOrder(Page.DESC);
+            }
             List<PropertyFilter> filters = Lists.newArrayList();
             filters.add(new PropertyFilter("EQB_ispublish", "true"));
             filters.add(new PropertyFilter("EQI_type", String.valueOf(type)));

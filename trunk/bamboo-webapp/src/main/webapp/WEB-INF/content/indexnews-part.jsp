@@ -2,7 +2,7 @@
 <%@ include file="/common/taglibs.jsp" %>
 <div  class="rightmenu">
 	<p class="category_header mb5">
-		<a class="rr mt5" href="indexsupply!search.action?type=${mtype}"><img src="css/image/more.png"/></a>${newsName}
+		<a class="rr mt5" href="indexnews!search.action?type=${mtype}"><img src="css/image/more.png"/></a>${newsName}
 	</p>
 	<ul>
 		<s:iterator value="partNewList">

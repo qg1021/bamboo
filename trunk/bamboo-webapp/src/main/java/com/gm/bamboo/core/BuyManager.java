@@ -144,11 +144,16 @@ public class BuyManager extends CacheEntityManager<Buy, Long>
     public List<Buy> search(int pagesize)
     {
 
-        String cacheKey = CacheKeyUtil.buildNewsKey(pagesize);
+        String cacheKey = CacheKeyUtil.buildBuyKey(pagesize);
         Object object = cacheManager.get(cacheKey);
         if (object == null)
         {// get from db
             Page<Buy> page = new Page<Buy>(pagesize);
+            if (!page.isOrderBySetted())
+            {
+                page.setOrderBy("id");
+                page.setOrder(Page.DESC);
+            }
             List<PropertyFilter> filters = Lists.newArrayList();
             filters.add(new PropertyFilter("EQB_ispublish", "true"));
             List<Buy> list = buyDao.findPage(page, filters).getResult();

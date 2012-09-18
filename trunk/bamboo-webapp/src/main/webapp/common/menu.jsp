@@ -17,19 +17,19 @@
 		<a href="${ctx}/index.action">首页</a>
 	</li>
 	<li id="indexsupply" class="fff">
-	<a  href="indexsupply.action">供应中心</a>
+	<a  href="indexsupply!search.action">供应中心</a>
 	</li>
 	<li id="indexbuy" class="fff">
-	<a  href="indexbuy.action">求购中心</a>
+	<a  href="indexbuy!search.action">求购中心</a>
 	</li>
 	<li id="indexbusiness" class="fff">
-	<a  href="indexbusiness.action">品牌招商</a>
+	<a  href="indexbusiness!search.action">品牌招商</a>
 	</li>
 	<li id="indexnews" class="fff">
-	<a  href="indexnews.action">行情资讯</a>
+	<a  href="indexnews!search.action">行情资讯</a>
 	</li>
 	<li id="indexcompany" class="fff">
-		<a href="indexcompany.action">企业信息</a>
+		<a href="indexcompany!search.action">企业信息</a>
 	</li>
 	</ul>
 </div>

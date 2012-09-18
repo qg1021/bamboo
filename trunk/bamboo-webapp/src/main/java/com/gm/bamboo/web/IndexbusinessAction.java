@@ -42,6 +42,7 @@ import cn.common.lib.springside.web.CrudActionSupport;
 
 import com.gm.bamboo.core.BusinessManager;
 import com.gm.bamboo.entity.Business;
+import com.google.common.collect.Lists;
 
 /**
  * 首页品牌招商信息
@@ -70,6 +71,18 @@ public class IndexbusinessAction extends CrudActionSupport<Business>
     @Autowired
     private BusinessManager   businessManager;
 
+    private List<Business>    businessList     = Lists.newArrayList();
+
+    public List<Business> getBusinessList()
+    {
+        return businessList;
+    }
+
+    public void setBusinessList(List<Business> businessList)
+    {
+        this.businessList = businessList;
+    }
+
     /**
      * {@inheritDoc}
      * 
@@ -80,6 +93,12 @@ public class IndexbusinessAction extends CrudActionSupport<Business>
     public String input() throws Exception
     {
         return INPUT;
+    }
+
+    public String part() throws Exception
+    {
+        businessList = businessManager.search(13);
+        return "part";
     }
 
     /**

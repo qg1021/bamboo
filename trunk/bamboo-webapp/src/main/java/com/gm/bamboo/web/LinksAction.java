@@ -31,6 +31,7 @@ import java.util.List;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.gm.bamboo.contant.Global;
 import com.gm.bamboo.core.LinksManager;
 import com.gm.bamboo.entity.Links;
 import com.google.common.collect.Lists;
@@ -57,11 +58,50 @@ public class LinksAction extends ActionSupport
     @Autowired
     private LinksManager      linksManager;
 
+    private Links             links;
+
+    public Links getLinks()
+    {
+        return links;
+    }
+
+    public void setLinks(Links links)
+    {
+        this.links = links;
+    }
+
+    private int mtype;
+
+    public int getMtype()
+    {
+        return mtype;
+    }
+
+    public void setMtype(int mtype)
+    {
+        this.mtype = mtype;
+    }
+
+    public String getLinkName()
+    {
+        return Global.linksTypeList.get(mtype).getLabel();
+    }
+
     @Override
     public String execute() throws Exception
     {
         linksList = linksManager.search(Links.TYPE_0, 100);
         return "links";
+    }
+
+    public String detail() throws Exception
+    {
+        List<Links> llist = linksManager.search(mtype, 1);
+        if (llist != null && !llist.isEmpty())
+        {
+            links = llist.get(0);
+        }
+        return "input";
     }
 
     public List<Links> getLinksList()

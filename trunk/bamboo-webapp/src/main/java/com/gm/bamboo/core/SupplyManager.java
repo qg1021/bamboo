@@ -144,11 +144,16 @@ public class SupplyManager extends CacheEntityManager<Supply, Long>
     public List<Supply> search(int pagesize)
     {
 
-        String cacheKey = CacheKeyUtil.buildNewsKey(pagesize);
+        String cacheKey = CacheKeyUtil.buildSupplyKey(pagesize);
         Object object = cacheManager.get(cacheKey);
         if (object == null)
         {// get from db
             Page<Supply> page = new Page<Supply>(pagesize);
+            if (!page.isOrderBySetted())
+            {
+                page.setOrderBy("id");
+                page.setOrder(Page.DESC);
+            }
             List<PropertyFilter> filters = Lists.newArrayList();
             filters.add(new PropertyFilter("EQB_ispublish", "true"));
             List<Supply> list = supplyDao.findPage(page, filters).getResult();

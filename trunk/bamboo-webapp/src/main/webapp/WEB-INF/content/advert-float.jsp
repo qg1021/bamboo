@@ -4,8 +4,8 @@
 <!-- 左侧广告  start -->
 <div id="ad_left" class="ad_left">
 	<span onclick="javaScipt:$('#ad_left').hide();">关闭</span>
-	<s:iterator value="floatLeftList">
-		<img src="<%=Global.picpath%>/${picurl}" width="83" height="168" border="0"/>
+	<s:iterator value="floatLeftAdList" >
+		<a href="${linkurl}" title="${title}" target="_blank"><img src="${ctx}<%=Global.picpath%>${picurl}" width="83" height="168" border="0"/></a>
 	</s:iterator>
 </div>
 <!-- 左侧广告  end -->
@@ -13,7 +13,7 @@
 <!-- 右侧广告  start -->
 <div id="ad_right" class="ad_right">
 	<span onclick="javaScipt:$('#ad_right').hide();">关闭</span>
-	<s:iterator value="floatRightList">
-		<img src="<%=Global.picpath%>/${picurl}" width="83" height="168" border="0"/>
+	<s:iterator value="floatRightAdList">
+		<a href="${linkurl}" title="${title}" target="_blank"><img src="${ctx}<%=Global.picpath%>${picurl}" width="83" height="168" border="0"/></a>
 	</s:iterator>
 </div>

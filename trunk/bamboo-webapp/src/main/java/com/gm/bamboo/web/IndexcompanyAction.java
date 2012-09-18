@@ -42,6 +42,7 @@ import cn.common.lib.springside.web.CrudActionSupport;
 
 import com.gm.bamboo.core.CompanyManager;
 import com.gm.bamboo.entity.Company;
+import com.google.common.collect.Lists;
 
 /**
  * 首页企业信息
@@ -69,6 +70,24 @@ public class IndexcompanyAction extends CrudActionSupport<Company>
 
     @Autowired
     private CompanyManager    companyManager;
+
+    private List<Company>     companyList      = Lists.newArrayList();
+
+    public List<Company> getCompanyList()
+    {
+        return companyList;
+    }
+
+    public void setCompanyList(List<Company> companyList)
+    {
+        this.companyList = companyList;
+    }
+
+    public String part() throws Exception
+    {
+        companyList = companyManager.search(13);
+        return "part";
+    }
 
     /**
      * {@inheritDoc}

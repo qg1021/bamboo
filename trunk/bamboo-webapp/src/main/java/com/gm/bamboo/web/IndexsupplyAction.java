@@ -42,6 +42,7 @@ import cn.common.lib.springside.web.CrudActionSupport;
 
 import com.gm.bamboo.core.SupplyManager;
 import com.gm.bamboo.entity.Supply;
+import com.google.common.collect.Lists;
 
 /**
  * 首页供应信息
@@ -69,6 +70,18 @@ public class IndexsupplyAction extends CrudActionSupport<Supply>
 
     @Autowired
     private SupplyManager     supplyManager;
+
+    private List<Supply>      supplyList       = Lists.newArrayList();
+
+    public List<Supply> getSupplyList()
+    {
+        return supplyList;
+    }
+
+    public void setSupplyList(List<Supply> supplyList)
+    {
+        this.supplyList = supplyList;
+    }
 
     /**
      * {@inheritDoc}
@@ -108,6 +121,12 @@ public class IndexsupplyAction extends CrudActionSupport<Supply>
         }
         page = supplyManager.search(page, filters);
         return SUCCESS;
+    }
+
+    public String part() throws Exception
+    {
+        supplyList = supplyManager.search(13);
+        return "part";
     }
 
     public String search() throws Exception

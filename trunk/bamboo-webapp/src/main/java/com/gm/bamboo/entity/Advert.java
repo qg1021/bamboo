@@ -36,6 +36,18 @@ public class Advert extends BaseEntity
 
     private boolean           ispublic;
 
+    public final static int   TYPE_0           = 0;  // 首页左边
+
+    public final static int   TYPE_1           = 1;  // 首页右边
+
+    public final static int   TYPE_2           = 2;  // 首页切换
+
+    public final static int   TYPE_3           = 3;  // 首页中间
+
+    public final static int   TYPE_4           = 4;  //
+
+    public final static int   TYPE_5           = 5;
+
     @Transient
     public String getStatusName()
     {

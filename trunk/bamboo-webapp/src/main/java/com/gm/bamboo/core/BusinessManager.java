@@ -149,6 +149,11 @@ public class BusinessManager extends CacheEntityManager<Business, Long>
         if (object == null)
         {// get from db
             Page<Business> page = new Page<Business>(pagesize);
+            if (!page.isOrderBySetted())
+            {
+                page.setOrderBy("id");
+                page.setOrder(Page.DESC);
+            }
             List<PropertyFilter> filters = Lists.newArrayList();
             filters.add(new PropertyFilter("EQB_ispublic", "true"));
             List<Business> list = businessDao.findPage(page, filters)

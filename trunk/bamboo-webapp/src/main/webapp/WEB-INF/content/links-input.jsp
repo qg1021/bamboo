@@ -6,10 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>  
 	<%@ include file="/common/meta.jsp" %>
-	<meta content="indexbusiness" name="headmenu" />
-	<meta content="business" name="menu" />
 	<link href="${ctx}/css/front.css" rel="stylesheet" type="text/css" /> 
-	<link href="${ctx}/css/page.css" rel="stylesheet" type="text/css" /> 
 	<script src="${ctx}/js/jquery.js" type="text/javascript"></script>
 
 </head>
@@ -24,37 +21,17 @@
 		<div class="title">
       		<span class="title_icon">&nbsp;</span>
       		<ul>
-		        <li class="ll"><a href="indexnews.action">品牌招商</a></li>
-		        <li class="title_mo">这是箭头</li>
-		        <li class="ll">列表</li>
-		        <li class="rr">共${page.totalCount}条</li>
+		        <li class="ll"><a href="indexnews.action">${linkName}</a></li>
       		</ul>
     	</div>
     	<div class="l_col">
-    		<form id="mainForm" name="mainForm" action="index!search.action">
-    			<input type="hidden" id="keyword" name="keyword" value="${param['keyword']}"/>
-	      	<div class="newslist">
-	        	<ul>
-	        		<s:iterator value="page.result">
-		            	<li title="${title}">
-		                    <span class="ntitle">
-		                    	<s:if test="linkurl!=null && linkurl!=''">
-		                    		<a href="${linkurl}" target="_blank" class="ellipsis">
-                                		<common:cut len="80" string="${title}"/> 
-                                	</a>
-		                    	</s:if>
-		                    	<s:else>
-	                                <a href="indexbusiness!input.action?id=${id}" target="_blank" class="ellipsis">
-	                                	<common:cut len="80" string="${title}"/> 
-	                                </a>
-                                </s:else>
-                            </span>
-		                 </li>
-	                 </s:iterator>
-	           	</ul>
-	        </div>
-	        <%@ include file="/common/page.jsp"%>
-	        </form>
+	      	<div class="detailbox">
+        	
+        	<p class="clearb"></p>
+        	<span class="news_details_con"> 
+        		${links.remark}
+        	</span>
+      </div>
   		</div>
   		<!--左边内容结束-->
   		<!--右边内容开始-->

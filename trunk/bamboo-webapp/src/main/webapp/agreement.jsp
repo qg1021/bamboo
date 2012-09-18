@@ -11,7 +11,7 @@
 <div id="wrapper">
 	<div id="header">
 		<div id="header">
-			<%@ include file="/common/header.jsp" %>
+			<%@ include file="/common/frontheader.jsp" %>
 			<%@ include file="/common/menu.jsp" %>
 		</div>
 	</div>

@@ -11,7 +11,7 @@ package com.gm.bamboo.cache;
 public class CacheKeyUtil
 {
 
-    static String        cachePerfix        = "bamboo_";
+    public static String cachePerfix        = "bamboo_";
 
     /** 基础数据Key **/
 
@@ -36,9 +36,6 @@ public class CacheKeyUtil
     /** 友情链接、广告推广Key **/
 
     public static String LinksPrefix        = cachePerfix + "Links";
-
-    /** 当地特产、户外旅游、名胜古迹信息Key **/
-    public static String LocalfeelingPrefix = cachePerfix + "Localfeeling";
 
     /** 新闻焦点、热点资讯信息Key **/
     public static String NewsPrefix         = cachePerfix + "News";
@@ -84,11 +81,6 @@ public class CacheKeyUtil
         return AdvertPrefix + "_" + type;
     }
 
-    public static String buildLocalfeelingKey(int type)
-    {
-        return LocalfeelingPrefix + "_" + type;
-    }
-
     public static String buildLinksKey(int type)
     {
         return LinksPrefix + "_" + type;
@@ -97,6 +89,11 @@ public class CacheKeyUtil
     public static String buildBuyKey(int type)
     {
         return BuyPrefix + "_" + type;
+    }
+
+    public static String buildSupplyKey(int type)
+    {
+        return SupplyPrefix + "_" + type;
     }
 
     public static String buildIntroductionKey(int type)
@@ -111,7 +108,7 @@ public class CacheKeyUtil
 
     public static String buildBusinessKey(int pagesize)
     {
-        return BaseDataPrefix + "_" + pagesize;
+        return BusinessPrefix + "_" + pagesize;
     }
 
 }

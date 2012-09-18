@@ -95,11 +95,9 @@
   		<div class="r_col">
    			<%@ include file="/common/leftlogin.jsp" %>
    			<div class="rr" style="margin-top:3px;">
-					<img border="0" width="242"  alt="" src="http://pigimg.zhongso.com/space/gallery/infoimgs/zm/zmgyp/20100126/2010012609395812592.gif"/>
+					<a href="${ctx}/links!detail.action?mtype=3" target="_blank"><img border="0" width="242"  alt="" src="http://pigimg.zhongso.com/space/gallery/infoimgs/zm/zmgyp/20100126/2010012609395812592.gif"/></a>
 			</div>
-			<div class="rr" style="margin-top:3px;">
-					<img border="0" width="242"  alt="" src="http://pigimg.zhongso.com/space/gallery/infoimgs/zm/zmgyp/20100126/2010012609395812592.gif"/>
-			</div>
+			<c:import url="${appurl}/advert!indexright.action"/>
   		</div>
   <!--右边内容结束-->  
 

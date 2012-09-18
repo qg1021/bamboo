@@ -76,13 +76,16 @@
               <li><a id="indexright" href="advert.action?mtype=1">首页悬浮右边广告 </a></li>
               <li><a id="indexhead" href="advert.action?mtype=2">首页头部切换广告 </a></li>
               <li><a id="indexcenter" href="advert.action?mtype=3">首页中间广告</a></li>
-              <li><a id="hangye" href="advert.action?mtype=4">行业资讯首页广告 </a></li> 
+              <li><a id="hangye" href="advert.action?mtype=4">首页资讯中间广告 </a></li> 
               <li><a id="rightpage" href="advert.action?mtype=5">右边随机广告位 </a></li>             
             </ul>
           </li>
-          <li class="submenu"><span class="cut" style="cursor: pointer;">友情链接</span>
+          <li class="submenu"><span class="cut" style="cursor: pointer;">辅助管理</span>
             <ul>
-              <li><a id="indexlinks" href="links.action?mtype=0">首页底部链接</a></li>           
+              <li><a id="indexlinks" href="links.action?mtype=0">首页底部链接</a></li>  
+              <li><a id="aboutus" href="links.action?mtype=1">关于我们</a></li> 
+              <li><a id="contactus" href="links.action?mtype=2">联系我们</a></li> 
+              <li><a id="adextend" href="links.action?mtype=3">广告推广</a></li>          
             </ul>
           </li>
                  

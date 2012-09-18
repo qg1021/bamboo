@@ -149,6 +149,11 @@ public class NewsManager extends CacheEntityManager<News, Long>
         if (object == null)
         {// get from db
             Page<News> page = new Page<News>(pagesize);
+            if (!page.isOrderBySetted())
+            {
+                page.setOrderBy("id");
+                page.setOrder(Page.DESC);
+            }
             List<PropertyFilter> filters = Lists.newArrayList();
             filters.add(new PropertyFilter("EQB_ispublish", "true"));
             filters.add(new PropertyFilter("EQI_type", String.valueOf(type)));

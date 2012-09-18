@@ -20,7 +20,7 @@
   <!-- 正文内容 start -->
   <div id="content">
   	<div id="header">
-		<%@ include file="/common/header.jsp" %>
+		<%@ include file="/common/frontheader.jsp" %>
 		<%@ include file="/common/menu.jsp" %>
 	</div>
   	<div class="supertitle">
