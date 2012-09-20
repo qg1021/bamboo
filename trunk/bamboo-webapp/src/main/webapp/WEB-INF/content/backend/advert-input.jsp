@@ -120,7 +120,7 @@
 				  			<input name="file" type="file" id="file" class="input" onchange="ajaxUploadPic('../upload.excsec');"/>
 	        				<span id="picspan">
 	        					<s:if test="picurl!=null">
-	        						<a id="picexample" href="..<%=Global.picpath%>/${picurl}">预览</a>
+	        						<a id="picexample" href="..<%=Global.picpath%>${picurl}">预览</a>
 	        					</s:if>
 	        					<s:else>
 	        						<a id="picexample" href="" style="display:none">查看</a>

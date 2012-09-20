@@ -23,11 +23,11 @@
 			<!-- focus  start -->
 			<div class="index_focus_box">
 				<c:import url="${appurl}/advert!indextab.action"/>
-				<div id="tt" class="easyui-tabs" style="width:465px;margin-top:5px;">  
-					<c:import url="${appurl}/indexsupply!part.action"/>	
-					<c:import url="${appurl}/indexbuy!part.action"/>
+				<div id="tt" class="easyui-tabs" style="width:465px;margin-top:5px;"> 
+					<c:import url="${appurl}/indexcompany!part.action"/> 
 					<c:import url="${appurl}/indexbusiness!part.action"/>	
-					<c:import url="${appurl}/indexcompany!part.action"/>				
+					<c:import url="${appurl}/indexsupply!part.action"/>	
+					<c:import url="${appurl}/indexbuy!part.action"/>		
 				</div>
 			</div>
 			<!-- focus  end -->
@@ -38,9 +38,7 @@
 				<c:import url="${appurl}/advert!indexright.action"/>
 			</div>
 			<p class="clearb"></p>
-				<c:import url="${appurl}/advert!indexcenter.action"/>
-			<p class="clearb"></p>
-		
+			<c:import url="${appurl}/advert!indexcenter.action"/>
 			<div style="margin-right:9px;" class="index_news_2box ll">
 				<c:import url="${appurl}/indexnews!part.action?mtype=0&psize=8"/>
 			</div>
@@ -50,9 +48,7 @@
 			<div  class="index_news_2box">
 				<c:import url="${appurl}/indexnews!part.action?mtype=2&psize=8"/>
 			</div>
-			<p class="clearb"></p>
-				<c:import url="${appurl}/advert!indexnews.action"/>
-			<p class="clearb"></p>	
+			<c:import url="${appurl}/advert!indexnews.action"/>
 			<div style="margin-right:9px;" class="index_news_2box ll">
 				<c:import url="${appurl}/indexnews!part.action?mtype=3&psize=8"/>
 			</div>
@@ -64,7 +60,7 @@
 			</div>
 		</div>
 		<p class="clearb" ></p>
-		<div class="ta_c" ><img style="margin-top:-8px;" src="demo/vip.gif" width="960"/></div>
+		<div class="ta_c" ><img src="demo/vip.gif" width="960"/></div>
 		<c:import url="${appurl}/links.action"/>
 		<%@include file="/common/footer.jsp" %>
 	</div>

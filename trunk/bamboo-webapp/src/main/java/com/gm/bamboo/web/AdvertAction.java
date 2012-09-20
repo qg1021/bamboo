@@ -92,7 +92,7 @@ public class AdvertAction extends ActionSupport
      */
     public String indexcenter() throws Exception
     {
-        centerAdList = advertManager.search(Advert.TYPE_3, 4);
+        centerAdList = advertManager.search(Advert.TYPE_3, 6);
         return "center";
     }
 
@@ -122,7 +122,7 @@ public class AdvertAction extends ActionSupport
      */
     public String indexnews() throws Exception
     {
-        centerAdList = advertManager.search(Advert.TYPE_4, 4);
+        centerAdList = advertManager.search(Advert.TYPE_4, 6);
         return "center";
     }
 
@@ -137,7 +137,7 @@ public class AdvertAction extends ActionSupport
      */
     public String indextab() throws Exception
     {
-        centerAdList = advertManager.search(Advert.TYPE_2, 8);
+        tabAdList = advertManager.search(Advert.TYPE_2, 8);
         return "tab";
     }
 

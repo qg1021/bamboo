@@ -5,7 +5,7 @@
 	<s:iterator value="centerAdList" status="st">
 		<div class="middle_ad ll" style="margin-right:2px;">
 			<a target="_blank" href="${linkurl}" title="${title}">
-				<img src="${ctx}<%=Global.picpath%>${picurl}" width="235" height="84" border="0"/>
+				<img src="${ctx}<%=Global.picpath%>${picurl}" width="154" height="60" border="0"/>
 			</a>
 		</div>			
 	</s:iterator>

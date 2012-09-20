@@ -9,7 +9,7 @@
 			<div id="slideshow_photo">
 				<s:iterator value="tabAdList" status="st">
 					<a style="z-index: 1" href="${linkurl}" title="${title}" target="_blank" index="${st.count}">
-						<img src="<%=Global.picpath%>/${picurl}" width="465" height="300" border="0"/>
+						<img src="${ctx}<%=Global.picpath%>${picurl}" width="465" height="300" border="0"/>
 					</a> 
 				</s:iterator>
 			  </div>
