@@ -1,0 +1,227 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.normal {font-family: "Verdana","Arial";font-size:14px}
+.small {font-family: "Verdana","Arial";font-size:12px}
+body { font-family: "Verdana","Arial";font-size:14px}
+td {font-family: "Verdana","Arial";font-size:14px}
+th {font-family: "Verdana","Arial";font-size:15px}
+input {font-family: "Verdana","Arial";font-size:14px}
+a {text-decoration:underline; color:blue}
+a:link { text-decoration:underline; color: blue }
+a:visited { text-decoration:underline; color: blue }
+a:hover { text-decoration: underline; color: red }
+-->
+</style>
+<title>My Portal</title>
+<script language="javascript">
+// 这一段使得FireFox也支持IE的innerText方法
+function isIE(){
+if (window.navigator.userAgent.toLowerCase().indexOf("msie")>=1)
+return true;
+else
+return false;
+}
+if(!isIE()){ //firefox innerText define
+HTMLElement.prototype.__defineGetter__( "innerText",
+function(){
+var anyString = "";
+var childS = this.childNodes;
+for(var i=0; i <childS.length; i++) {
+if(childS[i].nodeType==1)
+anyString += childS[i].tagName=="BR" ? '\n' : childS[i].innerText;
+else if(childS[i].nodeType==3)
+anyString += childS[i].nodeValue;
+}
+return anyString;
+}
+);
+HTMLElement.prototype.__defineSetter__( "innerText",
+function(sText){
+this.textContent=sText;
+}
+);
+}
+// 这一段使得FireFox的HTMLElement具有click方法（add click method to HTMLElement in Mozilla）
+try {
+// create span element so that HTMLElement is accessible
+document.createElement('span');
+HTMLElement.prototype.click = function () {
+if (typeof this.onclick == 'function')
+this.onclick({type: 'click'});
+};
+}
+catch (e) {
+// alert('click method for HTMLElement couldn\'t be added');
+}
+// 对HTMLAnchorElement 加入onclick事件
+try {
+// create a element so that HTMLAnchorElement is accessible
+document.createElement('a');
+HTMLElement.prototype.click = function () {
+if (typeof this.onclick == 'function') {
+if (this.onclick({type: 'click'}) && this.href)
+window.open(this.href, this.target? this.target : '_self');
+}
+else if (this.href)
+window.open(this.href, this.target? this.target : '_self');
+};
+}
+catch (e) {
+// alert('click method for HTMLAnchorElement couldn\'t be added');
+}
+// 跟踪回车键事件
+function captureKeys (evt) {
+var keyCode = evt.keyCode ? evt.keyCode :
+evt.charCode ? evt.charCode : evt.which;
+if (keyCode == 13) {
+// cancel key:
+if (evt.preventDefault) {
+evt.preventDefault();
+}
+var dq = getCookie('default-engine');
+if( dq == null) dq = "baidu_txt";
+submit_query( dq );
+return false;
+}
+return true;
+}
+// cookie 功能函数
+function getCookie(cookieName)
+{
+var cookieString = document.cookie;
+var start =cookieString.indexOf(cookieName+'=');
+if(start == -1)
+return null;
+start += cookieName.length + 1;
+var end = cookieString.indexOf(';', start);
+if(end == -1)
+return unescape(cookieString.substring(start));
+return unescape(cookieString.substring(start,end));
+}
+function setCookie(cookieName, cookieValue)
+{
+var expires = new Date();
+expires.setTime( expires.getTime() + 3*30*24*60*60*1000); // 3 months
+document.cookie = cookieName + '=' + escape(cookieValue)+';expires='+expires.toGMTString();
+}
+function removeCookie(cookieName)
+{
+var expires = new Date();
+expires.setTime( expires.getTime() - 1);
+document.cookie = cookieName + '=fooxxx;expires='+expires.toGMTString();
+}
+function $(id) {
+return document.getElementById(id);
+}
+// 调式Object用，适用于IE，Firefox下可用firebug
+function dumpObject(obj)
+{
+var temp="";
+for (x in obj)
+temp += x + ": " + obj[x] + "\n";
+var popup = window.createPopup();
+popup.document.body.innerHTML = '<textarea rows=30 cols=40>' + temp + '</textarea>';
+popup.show(100, 100, 300, 400, document.body);
+}
+// 多种查询引擎请求分派
+function submit_query(t_query)
+{
+var keyword = document.getElementById("keyword");
+var mylink = document.getElementById("mylink");
+var loc = "";
+switch(t_query)
+{
+case "baidu_txt":
+loc = "http://www.baidu.com/s?wd=" + keyword.value;
+break;
+case "baidu_img":
+loc = "http://image.baidu.com/i?ct=201326592&lm=-1&tn=baiduimagenojs&pv=&word=" + keyword.value + "&z=0&pn=0&rn=16&cl=2";
+break;
+case "yodao_txt":
+loc = "http://www.yodao.com/search?q=" + encodeURI(keyword.value) + "&ue=utf8&keyfrom=web.index";
+break;
+case "yodao_img":
+loc = "http://image.yodao.com/search?q=" + encodeURI(keyword.value) + "&ue=utf8&keyfrom=image.index";
+break;
+case "yodao_dict":
+loc = "http://dict.yodao.com/search?q=" + encodeURI(keyword.value) + "&ue=utf8&keyfrom=dict.index";
+break;
+case "yodao_blog":
+loc = "http://blog.yodao.com/search?q=" + encodeURI(keyword.value) + "&ue=utf8&keyfrom=blog.top";
+break;
+case "iask_ditu":
+loc = "http://ditu.iask.com/a/r.php?cl=北京&key=" + keyword.value;
+break;
+case "verycd":
+loc = "http://www.verycd.com/search/folders/" + encodeURI(keyword.value);
+break;
+case "google_txt":
+loc = encodeURI("http://www.google.com/search?hl=en&q=" + keyword.value +"&btnG=Google+Search");
+break;
+case "yahoo_txt":
+loc = "http://search.yahoo.com/search?p="+encodeURI(keyword.value)+"&vc=&fr=yfp-t-501&toggle=1&cop=mss&ei=UTF-8&fp_ip=CN";
+break;
+case "trans_en":
+loc = "http://209.85.171.104/translate_c?hl=en&sl=en&tl=zh-CN&u=http://" + keyword.value + "/&usg=ALkJrhijPevZUxPtrHDj94k1U9Wo8x7S8g";
+break;
+case "google_code":
+loc = "http://www.google.com/codesearch?q=" + keyword.value + "&hl=en&btnG=Search+Code";
+break;
+case "google_scholar":
+loc = "http://scholar.google.com/scholar?q=" + keyword.value + "&hl=en&lr=&btnG=Search";
+break;
+}
+setEngine(t_query);
+setCookie('default-engine', t_query);
+mylink.href= loc;
+mylink.click();
+}
+function getDefaultEngine()
+{
+var dq = getCookie('default-engine');
+if( dq == null) dq = "baidu_txt";
+return dq;
+}
+function setDefaultEngine()
+{
+var old_e = getDefaultEngine();
+if( $(old_e).innerText.indexOf('*') < 0)
+$(old_e).innerText = $(old_e).innerText + '*';
+}
+function setEngine( new_e )
+{
+var old_e = getDefaultEngine();
+if( $(old_e).innerText.indexOf('*') >= 0)
+$(old_e).innerText = $(old_e).innerText.replace('*','');
+if( $(new_e).innerText.indexOf('*') < 0)
+$(new_e).innerText = $(new_e).innerText + '*';
+setCookie('default-engine', new_e);
+}
+</script>
+</head>
+<body onload='setDefaultEngine()'>
+<table border="0" width="100%">
+<tr><td>
+<a href="http://www.google.com" id="mylink" target="_blank">Search:</a>
+<input type="text" name="keyword" size="20" id="keyword" onkeypress="return captureKeys(event);">
+<a href="#" id='baidu_txt' onclick="submit_query('baidu_txt')">百度</a>
+<a href="#" id='google_txt' onclick="submit_query('google_txt')">Google</a>
+<a href="#" id='yodao_txt' onclick="submit_query('yodao_txt')">有道</a>
+<a href="#" id='yodao_blog' onclick="submit_query('yodao_blog')">博客</a>
+<a href="#" id='google_code' onclick="submit_query('google_code')">代码</a>
+<a href="#" id='google_scholar' onclick="submit_query('google_scholar')">论文</a>
+<a href="#" id='baidu_img' onclick="submit_query('baidu_img')">百图</a>
+<a href="#" id='yodao_img' onclick="submit_query('yodao_img')">有图</a>
+<a href="#" id='yodao_dict' onclick="submit_query('yodao_dict')">词典</a>
+<a href="#" id='iask_ditu' onclick="submit_query('iask_ditu')">地图</a>
+<a href="#" id='verycd' onclick="submit_query('verycd')">CD</a>
+<a href="#" id='yahoo_txt' onclick="submit_query('yahoo_txt')">Yahoo</a>
+<a href="#" id='trans_en' onclick="submit_query('trans_en')">翻译</a>
+</td></tr>
+</table>
+<form target="_blank" method="get" action="http://www.jqonline.com/search/client.asp"><table style="border: 1px solid #BBBBBB;background-color:#FFFFFF;width:600px;text-align:center" align="center" border="0" cellpadding="0" cellspacing="0"><tr><td nowrap style="padding-bottom:6px;padding-top:6px"><a target="_blank" href="/"><img alt="JQ超级集成搜索引擎" src="http://www.jqonline.com/search/images/logo_9025.gif" align="absmiddle" border="0"></a> <input style="width:350px;" name="word" type="text" value="请输入关键字" onMouseOver="this.focus()" onBlur="if (value ==''){value='请输入关键字'}" onFocus="this.select()" onClick="if(this.value=='请输入关键字')this.value=''"> <select style="width:77px" name="catalog"><option selected="selected" value="">全部网页</option><option value="photo">图片搜索</option><option value="music">音乐搜索</option><option value="video">影视搜索</option><option value="game">游戏搜索</option><option value="know">知识搜索</option><option value="site">站内搜索</option></select> <input style="line-height:130%;height:22px;width:39px" value="搜索" type="submit"></td></tr></table></form>
+</body>
+</html>
