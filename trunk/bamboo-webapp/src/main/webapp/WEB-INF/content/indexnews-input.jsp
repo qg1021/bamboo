@@ -23,7 +23,7 @@
 		<div class="title">
       		<span class="title_icon">&nbsp;</span>
       		<ul>
-		        <li class="ll"><a href="indexnews.action">行业资讯</a></li>
+		        <li class="ll"><a href="indexnews!search.action">行业资讯</a></li>
 		        <li class="title_mo">这是箭头</li>
 		        <li class="ll"><a href="indexnews!search.action?type=${type}">${menuName}</a></li>
 		        <li class="title_mo">这是箭头</li>

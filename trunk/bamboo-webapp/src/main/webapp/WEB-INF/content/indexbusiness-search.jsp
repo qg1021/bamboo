@@ -24,7 +24,7 @@
 		<div class="title">
       		<span class="title_icon">&nbsp;</span>
       		<ul>
-		        <li class="ll"><a href="indexnews.action">品牌招商</a></li>
+		        <li class="ll"><a href="indexbusiness!search.action">品牌招商</a></li>
 		        <li class="title_mo">这是箭头</li>
 		        <li class="ll">列表</li>
 		        <li class="rr">共${page.totalCount}条</li>

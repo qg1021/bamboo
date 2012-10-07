@@ -23,7 +23,7 @@
 		<div class="title">
       		<span class="title_icon">&nbsp;</span>
       		<ul>
-		        <li class="ll"><a href="indexbuy.action">求购中心</a></li>
+		        <li class="ll"><a href="indexbuy!search.action">求购中心</a></li>
 		        <li class="title_mo">这是箭头</li>
 		        <li class="ll">${title}</li>
       		</ul>

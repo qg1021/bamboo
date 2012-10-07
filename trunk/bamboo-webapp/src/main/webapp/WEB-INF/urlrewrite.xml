@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite
+    PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+    "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+	<outbound-rule>
+		<name>资讯url重写 </name>
+		<from>/news-(\d+).htm</from>
+		<to type="forward">/indexnews!input.action?id=$1</to>
+	</outbound-rule>
+	<!--<outbound-rule>
+		<name>浏览文章1</name>
+		<from>/news/article!info.action\?id=(\w*)&amp;fg=(\w*)</from>
+		<to>/a-$1-$2.html</to>
+	</outbound-rule>
+	<rule>
+		<name>二个参数，参数为字符或数字,请求主配置带- </name>
+		<from>/a-(\d+)-(\d+).html</from>
+		<to type="forward">/news/article!info.action?id=$1&amp;fg=$2</to>
+	</rule>
+	<outbound-rule>
+		<name>浏览文章2</name>
+		<from>/news/article!info.action\?id=(\d+)&amp;fg=(\d+)</from>
+		<to>/a-$1-$2.html</to>
+	</outbound-rule>
+
+	-->
+</urlrewrite>

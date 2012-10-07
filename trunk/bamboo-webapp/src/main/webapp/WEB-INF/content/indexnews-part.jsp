@@ -17,7 +17,7 @@
                            	</a>
                  	</s:if>
                  	<s:else>
-                            <a href="indexnews!input.action?id=${id}" target="_blank" class="ellipsis">
+                            <a href="<c:url value="/indexnews!input.action?id=${id}"/>" target="_blank" class="ellipsis">
                             	<common:cut len="20" string="${title}"/> 
                             </a>
                            </s:else>
